@@ -23,7 +23,7 @@
           </a>
         </li>
         <li class="submenu">
-          <a href="Productos.php">
+          <a href="#">
             <span class="icon-shopping-basket"></span>
             Productos
             <span class="icon-down-open" id="desplegar"></span>
