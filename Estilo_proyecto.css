@@ -5,7 +5,7 @@
 
 header{
 width: 100%;
-height: auto;
+    height: 15%;
 position: fixed;
 background: rgba(24,164,71,.90);
 
@@ -14,10 +14,13 @@ z-index: 1000;
 
 
 #division{
-width: 25%;
-height: 23px;
+height: 15%;
+
 overflow:hide;
 float:right;
+    border-right-width: 20px;
+    margin-right: 20px;
+    width: 350px;
 }
 
 span.classy {
@@ -32,33 +35,37 @@ margin-right:80px;
 
 div.grad-nex {
     display: block;
-    height: 2px;
+    height: 1%;
     width: 100%;
-margin-top: 40px;
+margin-top: 2%;
 	 background-image: url("linea.png");
 }
 
 #logo{
 
-height:auto;
-width: 21%;
-float:left;
+    height: 60%;
+    width: 10%;
+    float: left;
 }
 
+#content{
+      height: 66%;
+	    overflow: hidden;
 
+
+}
 
 img.ocultar-pequeño {
 
-   height: 60px;
-    width: 80px;
-	padding-top: 5px;
-       padding-left: 20px;
-              padding-right: 20px;
-              padding-bottom:  5px;
+
+
 	 overflow: hidden;
 	}
 
+ul#menu{
 
+    margin-top:.5%;
+}
 
 ul.dropdown-content{
 color:#555;
@@ -89,12 +96,13 @@ float:left;
     display: none;
     position: absolute;
     min-width: 85px;
+
 }
 
 nav {
   float: left; /* Desplazamos el nav hacia la izquierda */
 
-margin-top: 5px;
+margin-top: .5%;
   }
 
 nav ul {
@@ -116,11 +124,15 @@ nav ul li a {
 
 }
 
-
+@media screen and (max-width: 320px) {
+  div#content {
+    display: block;
+  }
+}
 /*Efectos*/
 
 .hvr-underline-from-right {
-  margin-top:20px;
+  margin-top:10%;
   display: inline-block;
   vertical-align: middle;
   -webkit-transform: translateZ(0);

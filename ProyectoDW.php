@@ -5,20 +5,35 @@
 </title>
   <link rel="stylesheet" href="Estilo_proyecto.css">
   <meta charset="UTF-8">
+ 
 </head>
 <body>
 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 
+<script type="text/javascript">
+function actualizarTama() {
+  
+  $("body").css("zoom", window.innerWidth / 1366);
+  
+}
+
+$(document).ready(function() {
+
+  // actualizaremos el zoom cuando la ventana cambie de tamaño
+  $(window).on("resize", actualizarTama);
+  
+  // y al cargar la página
+  actualizarTama();
+  
+});
+</script>
 
 
 <header>
 
 
 
-<div id="division">
-<span class=""><input type="email" placeholder="Correo Electronico"></span>
-<span class=""><INPUT type="text" placeholder="Contraseña"></span>
-</div>
 
 <div class="grad-nex">
 </div>
@@ -26,12 +41,14 @@
 	<nav>
 
     <div id="logo">
-    <img class="ocultar-pequeño " src="logo.png" alt="fruta">
+    <img class="ocultar-pequeño " src="logo.png" alt="fruta" style="width: 100%;
+    height: 100%;">
 
     </div>
 
 	<ul id="menu">
-			<li class="dropdown"><a  href="ActvLudicas.php" class="hvr-underline-from-right" >Inicio</a>
+<div id="content">
+	<li class="dropdown"><a  href="ProyectoDW.php" class="hvr-underline-from-right" >Inicio</a>
 
 <ul class="dropdown-content">
 
@@ -58,8 +75,10 @@
 			
 </li>
 		</ul>
+		</div>
 
 	</nav>
+
 
 
 
