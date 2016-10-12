@@ -58,7 +58,7 @@
           </a>
         </li>
         <li>
-          <a href="Acerda_de_nosotros.php">
+          <a href="Acerca_de_nosotros.php">
             <span class="icon-group">
             </span>
             Acerca de nosotros
