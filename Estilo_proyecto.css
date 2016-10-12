@@ -65,6 +65,8 @@ img.ocultar-pequeño {
 ul#menu{
 
     margin-top:.5%;
+	width: 500px;
+	float: left;
 }
 
 ul.dropdown-content{
