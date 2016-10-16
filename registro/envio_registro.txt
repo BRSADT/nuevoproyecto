@@ -1,0 +1,32 @@
+<html lang="es">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>AJAX, Ejemplos: Combos (select) dependientes, codigo fuente - ejemplo</title>
+<link rel="stylesheet" type="text/css" href="select_dependientes.css">
+<script type="text/javascript" src="select_dependientes.js"></script>
+
+</head>
+
+<body>
+<form name="comprar" method="POST" onsubmit="" action="select_dependientes.php"></br>
+				<input type="email" class="text" id="email" name="email" tabindex="1" placeholder="Email" required><br>
+			<div id="demo" style="width:600px;">
+				<div id="demoDer">
+					<select disabled="disabled" name="estados" id="estados">
+						<option value="0">Seleccionas opci&oacute;n...</option>
+					</select>
+				</div>
+				<div id="demoIzq"><?php  generaPaises(); ?></div>
+			</div>
+				<input type="submit" value="Siguiente">
+			</form>
+<?php
+include("select_dependientes_proceso.php");		
+if (isset($_POST["email"])) {
+echo 'Obtenido: '.$registro[0];
+
+}else{  
+    echo "N0, mail is not set";
+}?>
+</body>
+</html>

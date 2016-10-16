@@ -6,14 +6,28 @@ class conexionBdd {
     public function __construct()
     {
         //CADENA DE CONEXION PDO(localhost,nombre de la bd, usuario, contraseña)
-        $this->con = new PDO('mysql:host=localhost; dbname=Base_proyecto_Dw',"root","");
+        $this->con = new PDO('mysql:host=localhost; dbname=select_dependientes',"root","");
     }
 	
 	   public function muestraTodo()
     {
-        $r=$this->con->query("SELECT * FROM estados");
+        $r=$this->con->query("SELECT * FROM lista_paises");
         return $r->fetchAll(PDO::FETCH_ASSOC);
     }
+	
+	
+		   public function seleccionarest()
+		   
+    {
+        $r=$this->con->query("SELECT id, opcion FROM lista_paises");
+        return $r->fetchAll(PDO::FETCH_ASSOC);
+    }
+	
+	
+	
+	
+	
+	
  public function registro($Nombre,$Edad,$Pass,$Usuario,$email,$Apellido)
     {
         $sql=$this->con->prepare("insert into persona( Nombre,Edad,Pass,Usuario,email,Apellido, admin) values (?,?,?,?,?,?)");
