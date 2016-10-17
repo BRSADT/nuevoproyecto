@@ -40,12 +40,58 @@ mysqli_query($enlace,"SET NAMES 'utf8'");
 
 }
 
+function verificarUsuario($Usuario,$Email)
+{
+
+$verificar=0;
+ 
+	$link = mysqli_connect("localhost", "root", "", "base_proyecto_dw");
+
+/* verificar conexión */
+if (mysqli_connect_errno()) {
+    printf("Connect failed: %s\n", mysqli_connect_error());
+    exit();
+}
+
+	
+$consulta = "SELECT Usuario,Email from persona ";	
+	
+	
+	if ($sentencia = mysqli_prepare($link, $consulta)) {
+
+		echo "adsdaaaaaaa";
+    /* ejecutar la sentencia */
+    mysqli_stmt_execute($sentencia);
+
+  
+    mysqli_stmt_bind_result($sentencia, $user,$email);
+
+    /* obtener los valores */
+    while (mysqli_stmt_fetch($sentencia)) {
+echo"-..." ;   
+	if($Usuario==$user||$Email==$email)
+	$verificar=1;
+
+    }
+	
+}
+if($verificar==1)
+  {
+
+  return true;
+  }
+  
+}
+
+  
+
 ?>
 <?php
 
 
 
 if (isset($_POST["email"])) {
+/*
 $usuario=$_POST["usuario"];
 echo $_POST["usuario"]; //email
 echo " ";
@@ -78,11 +124,19 @@ echo $_POST['tarjeta']; //id estado
 echo " ";
 
 $TarjetaN=$_POST['TarjetaN']; 
-echo $_POST['TarjetaN']; //id estado
+echo $_POST['TarjetaN']; //id estado*/
+
+
 echo "\n   ";
+if(verificarUsuario($usuario,$email)==true)
+echo "ya existe no fue insertado en la bdd";
+else
+{
+echo "no existe";
+
 insertarUsuario($pass,$usuario,$nombre,$apellido,$email,0,$paises,$estados,$calle,$tarjeta,$TarjetaN);
 
-
+}
 
 
 
