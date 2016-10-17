@@ -1,56 +1,25 @@
 <?php
+header("Content-Type: text/html;charset=utf-8");
 
 class BaseDeDatos {
+
+    private $con;
 function __construct()
 {
+ $this->con = new PDO('mysql:host=localhost; dbname=base_proyecto_dw',"root","", array(PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES  \'UTF8\''));
+ 
+ }
 
 
-$enlace = mysqli_connect("localhost", "root", "", "base_proyecto_dw");
-mysqli_query($enlace,"SET NAMES 'utf8'");
-if (!$enlace) {
-    echo "Error: No se pudo conectar a MySQL." . PHP_EOL;
-    echo "errno de depuración: " . mysqli_connect_errno() . PHP_EOL;
-    echo "error de depuración: " . mysqli_connect_error() . PHP_EOL;
-    exit;
+     public function sessionData($Usuario) {
+        $sql=$this->con->query("CALL userData('$Usuario')");
+        return $sql->fetchAll(PDO::FETCH_ASSOC);
+    }
+	
+	
+ 
 }
 
-
-}
-
-
-function generaPaises()
-{
-	include 'conexion.php';
-$enlace = mysqli_connect("localhost", "root", "", "base_proyecto_dw");
-	$consulta=mysqli_query($enlace,"SELECT id, nombre FROM estados");
-mysqli_query($enlace,"SET NAMES 'utf8'");
-
-
-	
-	echo "<select name='paises' id='paises' onChange='cargaContenido(this.id)'>";
-	echo "<option value='0'>Estado </option>";
-
-	while($registro=mysqli_fetch_row($consulta))
-	{
-		echo "<option value='".$registro[0]."'>".$registro[1]."</option>";
-	
-	}
-	
-	echo "</select>";
-	
-}
-
-
-function insertarUsuario($Pass,$Usuario,$Nombre,$Apellido,$Email,$Admin,$estado,$municipio)
-{
-	$insert=mysqli_query($enlace,"INSERT INTO persona (Pass,Usuario,Nombre,Apellido,Email,Admin,estado,municipio) VALUES ($Edad,$Pass,$Usuario,$Nombre,$Apellido,$Email,$Admin,$estado,$municipio)");
-mysqli_query($enlace,"SET NAMES 'utf8'");
-
-
-
-	
-}
-}
 ?>
 
 

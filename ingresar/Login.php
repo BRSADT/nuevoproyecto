@@ -1,4 +1,19 @@
 
+			
+			<html lang="es-US">
+	<head>
+		<title>Ingresa</title>
+
+	</head>
+	<body>
+		<header>
+		<?php
+			session_start();?>
+			<?php 	if(!isset($_SESSION['name'])): 
+			
+			?>
+			<div id="formulario">
+			<p>INGRESAR:</p>
 
 <form name="registrar" method="POST"  action="ExistenciaUsuario.php"></br>
 		
@@ -8,3 +23,18 @@
 							
 				<input type="submit" value="Enviar">
 			</form>
+			</div>
+		<?php else: {
+		echo "hola ";
+		echo $_SESSION['name'];
+		echo " ya estas  " ; 
+		}
+			?>
+		
+		<form action="CerrarSesion.php" method="get" id="form1">
+   <button type="submit">salir</button>
+</form>
+		<?php endif;?>
+	</body>
+</html>
+			

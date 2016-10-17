@@ -1,5 +1,15 @@
-<?php
+<script>
+function miFuncion()
+{
 
+window.location.replace("Login.php")
+}
+
+
+</script>
+
+<?php
+include("conexion.php");
 function verificarUsuario($Usuario,$Pass)
 {
 
@@ -19,7 +29,6 @@ $consulta = "SELECT Usuario,Pass from persona ";
 	
 	if ($sentencia = mysqli_prepare($link, $consulta)) {
 
-		echo "adsdaaaaaaa";
     /* ejecutar la sentencia */
     mysqli_stmt_execute($sentencia);
 
@@ -28,7 +37,7 @@ $consulta = "SELECT Usuario,Pass from persona ";
 
     /* obtener los valores */
     while (mysqli_stmt_fetch($sentencia)) {
-echo"-..." ;   
+
 	if($Usuario==$user && $Pass==$pass)
 	$verificar=1;
 
@@ -42,28 +51,43 @@ if($verificar==1)
   }
   
 }
-?>
 
-
-<?php
 
 
 
 if (isset($_POST["usuario"])) {
 
 $usuario=$_POST["usuario"];
-echo $_POST["usuario"]; //email
-echo " ";
+
 $pass=$_POST['pass'];
-echo $_POST['pass']; //id estado
+
 
 
 if(verificarUsuario($usuario,$pass)==true)
-echo "ya existe hiciste log";
+
+{
+$ObjBD= new BaseDeDatos();
+
+session_start();
+$datos=datosDeSesion($ObjBD);
+
+ $_SESSION['name']=$datos[0]['name'];
+                $_SESSION['apellido']=$datos[0]['apellido'];
+                   $_SESSION['email']=$datos[0]['email'];
+				echo  $_SESSION['name'];
+	echo  $_SESSION['apellido'];
+	echo  $_SESSION['email'];
+
+	header('Location: ../ingresar/Login.php');
+	}
 else
 {
-echo "no existe";
+//header('Location: ../ingresar/Login.php');
+echo ('<script> 
+miFuncion()
+alert("no existe en la base de datos ,") ;
 
+</script>');
 
 
 }
@@ -72,4 +96,10 @@ echo "no existe";
 
 }
 
+
+function datosDeSesion($BD){
+
+    $datos = $BD->sessionData($_POST["usuario"]);
+    return $datos;
+}
 ?>

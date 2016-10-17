@@ -42,7 +42,11 @@ mysqli_query($enlace,"SET NAMES 'utf8'");
 <body>
 
 
-
+<?php
+			session_start();?>
+			<?php 	if(!isset($_SESSION['name'])): 
+			
+			?>
 
 <form name="registrar" method="POST" onsubmit="return validacion()" action="envio_registro.php"></br>
 		
@@ -53,7 +57,7 @@ mysqli_query($enlace,"SET NAMES 'utf8'");
 		
 				<input type="text" class="text" id="nombre" name="nombre" tabindex="2" placeholder="Nombre(s)" maxlength="30" required><br><br>
 				<input type="text" class="text" id="apellido" name="apellido" tabindex="3" placeholder="Apellido(s)" maxlength="30" required><br><br>
-		<input type="email" class="text" id="email" name="email" tabindex="1" placeholder="Email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" required><br><br>
+		<input type="email" class="text" id="email" name="email" tabindex="1" placeholder="Email" pattern="[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[a-z]{2,3}$" required><br><br>
 	
 					
 			<div id="demo" style="width:600px;">
@@ -75,9 +79,21 @@ mysqli_query($enlace,"SET NAMES 'utf8'");
 					</select>
 
 			<input type="text" name="TarjetaN" id="TarjetaN" placeholder="Numero Tarjeta" pattern="^(?:5[1-9][0-9]{2}|222[1-9]|22[3-9][0-9]|2[3-6][0-9]{2}|27[01][0-9]|2720)[0-9]{12}$|^3[47][0-9]{13}$|^4[0-9]{12}(?:[0-9]{3})?$" required> <br><br>				
-				<input type="submit" value="Enviar">
+<input type="text" class="text" id="Titular" name="Titular" tabindex="2" placeholder="Titular" maxlength="30" required><br><br>			
+			<input type="submit" value="Enviar">
 			</form>
-
+			
+			<?php else: {
+		echo "hola ";
+		echo $_SESSION['name'];
+		echo " ya estas  " ; 
+		}
+		
+		?>
+			<form action="../funciones/CerrarSesion.php" method="get" id="form1">
+   <button type="submit">salir</button>
+</form>
+<?php endif;?>
 </body>
 </html>
 

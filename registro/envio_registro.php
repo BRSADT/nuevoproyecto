@@ -1,3 +1,17 @@
+<script>
+function miFuncion()
+{
+
+window.location.replace("../ingresar/Login.php")
+}
+function miFuncion2()
+{
+
+window.location.replace("Registro.php")
+}
+
+
+</script>
 <html lang="es">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
@@ -13,7 +27,7 @@
 
 
 
-function insertarUsuario($Pass,$Usuario,$Nombre,$Apellido,$Email,$Admin,$paises,$estados,$calle,$tarjeta,$TarjetaN)
+function insertarUsuario($Pass,$Usuario,$Nombre,$Apellido,$Email,$Admin,$paises,$estados,$calle,$tarjeta,$TarjetaN,$Titular)
 {
 
 $enlace = mysqli_connect("localhost", "root", "", "base_proyecto_dw");
@@ -21,19 +35,19 @@ $enlace = mysqli_connect("localhost", "root", "", "base_proyecto_dw");
 	
 $resultado = mysqli_query($enlace,"SELECT nombre FROM estados where estados.id='$paises'") ;
  while ($row = mysqli_fetch_assoc($resultado)) {
-        echo  $row["nombre"];
+        
 		$estado=$row["nombre"];
     }
 
 	$resultad = mysqli_query($enlace,"SELECT nombre FROM municipios where municipios.id='$estados'") ;
  while ($row = mysqli_fetch_assoc($resultad)) {
-        echo  $row["nombre"];
+        
 		$municipios=$row["nombre"];
     }
 	
 
 $enlace = mysqli_connect("localhost", "root", "", "base_proyecto_dw");
-$STATEMENT="INSERT INTO persona (Pass,Usuario,Nombre,Apellido,Email,Admin,estado,municipio) VALUES ('$Pass','$Usuario','$Nombre','$Apellido','$Email','$Admin','$estado','$municipios')";
+$STATEMENT="INSERT INTO persona (Pass,Usuario,Nombre,Apellido,Email,Admin,estado,municipio,Domicilio,Banco,NoTarjeta,TitularT) VALUES ('$Pass','$Usuario','$Nombre','$Apellido','$Email','$Admin','$estado','$municipios','$calle','$tarjeta','$TarjetaN','$Titular')";
 mysqli_query($enlace,$STATEMENT);
 mysqli_query($enlace,"SET NAMES 'utf8'");
 
@@ -59,7 +73,7 @@ $consulta = "SELECT Usuario,Email from persona ";
 	
 	if ($sentencia = mysqli_prepare($link, $consulta)) {
 
-		echo "adsdaaaaaaa";
+	
     /* ejecutar la sentencia */
     mysqli_stmt_execute($sentencia);
 
@@ -68,7 +82,7 @@ $consulta = "SELECT Usuario,Email from persona ";
 
     /* obtener los valores */
     while (mysqli_stmt_fetch($sentencia)) {
-echo"-..." ;   
+   
 	if($Usuario==$user||$Email==$email)
 	$verificar=1;
 
@@ -125,16 +139,40 @@ echo " ";
 
 $TarjetaN=$_POST['TarjetaN']; 
 //echo $_POST['TarjetaN']; //id estado
+$Titular=$_POST['Titular']; 
+
+if($_POST['tarjeta']==1)
+$tarjeta="American Express";
+
+
+if ($_POST['tarjeta']==2)
+$tarjeta="Visa";
+
+if ($_POST['TarjetaN']==3)
+$tarjeta="MasterCard";
+
 
 
 echo "\n   ";
 if(verificarUsuario($usuario,$email)==true)
-echo "ya existe no fue insertado en la bdd";
+echo ('<script> 
+
+
+
+
+
+alert("Ya existe este usuario,") ;
+miFuncion2()
+</script>');
 else
 {
-echo "no existe";
+echo ('<script> 
 
-insertarUsuario($pass,$usuario,$nombre,$apellido,$email,0,$paises,$estados,$calle,$tarjeta,$TarjetaN);
+alert("Felicidades ahora estas registrado,") ;
+miFuncion()
+</script>');
+
+insertarUsuario($pass,$usuario,$nombre,$apellido,$email,0,$paises,$estados,$calle,$tarjeta,$TarjetaN,$Titular);
 
 }
 
