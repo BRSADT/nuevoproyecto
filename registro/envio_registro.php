@@ -91,40 +91,40 @@ if($verificar==1)
 
 
 if (isset($_POST["email"])) {
-/*
+
 $usuario=$_POST["usuario"];
-echo $_POST["usuario"]; //email
+//echo $_POST["usuario"]; //email
 echo " ";
 $pass=$_POST['pass'];
-echo $_POST['pass']; //id estado
+//echo $_POST['pass']; //id estado
 echo " ";
 $pass2=$_POST['pass2'];
-echo $_POST['pass2']; //id estado
+//echo $_POST['pass2']; //id estado
 echo " ";
 $nombre=$_POST['nombre'];
-echo $_POST['nombre']; //id estado
+//echo $_POST['nombre']; //id estado
 echo " ";
 $apellido= $_POST['apellido']; 
-echo $_POST['apellido']; //id estado
+//echo $_POST['apellido']; //id estado
 echo " ";
 $email=$_POST["email"];
-echo $_POST["email"]; //email
+//echo $_POST["email"]; //email
 echo " ";
 $paises=$_POST['paises'];
-echo $_POST['paises']; //id estado
+//echo $_POST['paises']; //id estado
 echo " ";
 $estados=$_POST["estados"];
-echo $_POST["estados"]; //id municipio
+//echo $_POST["estados"]; //id municipio
 echo " ";
 $calle=$_POST['calle'];
-echo $_POST['calle']; //calle
+//echo $_POST['calle']; //calle
 echo " ";
 $tarjeta=$_POST['tarjeta'];
-echo $_POST['tarjeta']; //id estado
+//echo $_POST['tarjeta']; //id estado
 echo " ";
 
 $TarjetaN=$_POST['TarjetaN']; 
-echo $_POST['TarjetaN']; //id estado*/
+//echo $_POST['TarjetaN']; //id estado
 
 
 echo "\n   ";
