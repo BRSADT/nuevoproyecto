@@ -27,3 +27,13 @@ footer {
 footer hr{
  width: 10%;
 }
+
+.thumbnail {
+    position: relative;
+    padding: 0px;
+    margin-bottom: 20px;
+}
+
+.thumbnail img {
+    width: 100%;
+}
