@@ -60,6 +60,7 @@ mysqli_query($enlace,"SET NAMES 'utf8'");
 				<input type="text" class="text" id="apellido" name="apellido" tabindex="3" placeholder="Apellido(s)" maxlength="30" required><br><br>
 		<input type="email" class="text" id="email" name="email" tabindex="1" placeholder="Email" pattern="[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[a-z]{2,3}$" required><br><br>
 	
+	
 					
 			<div id="demo" style="width:600px;">
 				<div id="demoDer">
@@ -69,7 +70,13 @@ mysqli_query($enlace,"SET NAMES 'utf8'");
 				</div>
 				<div id="demoIzq"><?php  generaPaises() ; ?></div>
 			
-			</div><br>
+			
+			
+			</div
+			
+			
+			
+			><br>
 				<input type="text" class="text" id="calle" name="calle" tabindex="4" placeholder="Colonia-calle" minlength="5" maxlength="30" required><br><br>
 				
 
