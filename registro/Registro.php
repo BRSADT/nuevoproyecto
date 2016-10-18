@@ -1,11 +1,13 @@
+
+<?php header('Content-Type: text/html; charset=UTF-7'); ?>
 <?php
+
 function generaPaises()
 {
 	include 'conexion.php';
 $enlace = mysqli_connect("localhost", "root", "", "base_proyecto_dw");
 	$consulta=mysqli_query($enlace,"SELECT id, nombre FROM estados");
 mysqli_query($enlace,"SET NAMES 'utf8'");
-
 
 	
 	echo "<select name='paises' id='paises' onChange='cargaContenido(this.id)'>";
@@ -21,18 +23,17 @@ mysqli_query($enlace,"SET NAMES 'utf8'");
 	
 }
 ?>
-
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
-
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 
 <html lang="es">
 <head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <script type="text/javascript" src="validacion_registro/validacionJ.js"></script>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+
 <title>AJAX, Ejemplos: Combos (select) dependientes, codigo fuente - ejemplo</title>
 <link rel="stylesheet" type="text/css" href="select_dependientes.css">
 <script type="text/javascript" src="select_dependientes.js"></script>
-
+<meta http-equiv="Content-Type" content="text/html"; charset=utf-8"/> 
 
 
 	
@@ -40,7 +41,8 @@ mysqli_query($enlace,"SET NAMES 'utf8'");
 
 
 <body>
-
+<p> ño</p>
+<p> MÉXICO</p>
 
 <?php
 			session_start();?>

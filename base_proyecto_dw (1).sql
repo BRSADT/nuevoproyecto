@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 18-10-2016 a las 03:21:17
+-- Tiempo de generación: 18-10-2016 a las 04:57:14
 -- Versión del servidor: 5.6.17
 -- Versión de PHP: 5.5.12
 
@@ -40,8 +40,9 @@ CREATE TABLE IF NOT EXISTS `compra` (
   `Id_Ticket` int(10) NOT NULL,
   `Id_Persona` int(10) NOT NULL,
   `Id_Compra` int(10) NOT NULL AUTO_INCREMENT,
+  `Id_Producto` int(10) NOT NULL,
   PRIMARY KEY (`Id_Compra`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
 
 -- --------------------------------------------------------
 
@@ -2646,12 +2647,28 @@ INSERT INTO `persona` (`Pass`, `Usuario`, `Nombre`, `Apellido`, `Id_Persona`, `E
 
 CREATE TABLE IF NOT EXISTS `producto` (
   `Precio` int(100) NOT NULL,
-  `Nombre` varchar(50) NOT NULL,
-  `Descripcion` varchar(50) NOT NULL,
+  `Nombre` varchar(100) NOT NULL,
+  `Descripcion` varchar(255) NOT NULL,
   `Stock` int(100) NOT NULL,
   `Id_Producto` int(10) NOT NULL AUTO_INCREMENT,
   PRIMARY KEY (`Id_Producto`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=16 ;
+
+--
+-- Volcado de datos para la tabla `producto`
+--
+
+INSERT INTO `producto` (`Precio`, `Nombre`, `Descripcion`, `Stock`, `Id_Producto`) VALUES
+(6990, 'LENOVO - LAPTOP 100S DE 14"', 'Pantalla 14" HD 2GB RAM DDR3 64GB disco duro Proce', 10, 1),
+(6999, 'HP-LAPTOP 15-AY007LA DE 15.6"', 'Disco duro SATA 500GB 4GB RAM DDR3 Pantalla 15.6" ', 5, 2),
+(1999, 'HP-MULTIFUNCIONAL INK ADVANTAGE DE INYECCION DE TI', 'Imprime,copia y escanea con una gran calidad incluso desde tu movil con esta impresora HP.\r\n', 12, 3),
+(15999, 'MOTOROLA-CELULAR MOTO Z', 'Disfruta de este celular con su atractiva funcion multi-modulo para una mayor personalizacion de tu celular.\r\n', 20, 4),
+(3999, 'BOSE-BOCINA SOUNDLINK MINI II\r\n', 'Dejate llevar con tu musica favorita con un sonido pleno con bajos sorprendentes y un altavoz con calidad superior con el que podrás tomar llamadas sin problema alguno.\r\n', 8, 5),
+(10, '1KG DE JITOMATE ROJO\r\n', 'No hay jitomate más rojo y fresco que el nuestro.\r\n', 45, 6),
+(11, 'SABRITAS 450g\r\n', 'Disfruta de la mejor bolsa de aire en el mercado.\r\n', 23, 7),
+(12, 'COCA-COLA 500ml\r\n', 'Saca una sonrisa con tu coca-cola en todo momento. (Nota: No nos hacemos responsables de que te de diabetes o cancer)\r\n', 19, 8),
+(18, 'LECHE-SELLO ROJO 1L\r\n', 'Leshita para acompañar al panesito.\r\n', 30, 9),
+(10, 'PINGÜINO MARINELA\r\n', 'Deliciosos pastelitos rellenos de crema que haran de tu día uno más feliz\r\n\r\n\r\n', 50, 10);
 
 -- --------------------------------------------------------
 
