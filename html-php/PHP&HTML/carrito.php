@@ -1,7 +1,6 @@
-
 <?php
 header("Content-Type: text/html;charset=utf-8");
-include("../../html-php/funciones/GeneraEstado.php");
+include("../../html-php/funciones/GeneraEstado.php")
 ?>
 
 <br>
@@ -11,7 +10,7 @@ include("../../html-php/funciones/GeneraEstado.php");
 <ntml lang="es">
 
     <head>
-        <Title>Inicio</title>
+        <Title>Carrito</title>
 
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
@@ -196,103 +195,6 @@ include("../../html-php/funciones/GeneraEstado.php");
                 </div>
             </div>
         </div>
-
-        <div id="carousel-1" class="carousel slide" data-ride="carousel">
-            <ol class="carousel-indicators">
-                <li data-target="#carousel-1" data-slide-to="0" class="active"></li>
-                <li data-target="#carousel-1" data-slide-to="1" ></li>
-                <li data-target="#carousel-1" data-slide-to="2" ></li>
-            </ol>
-
-            <div class="carousel-inner" role="listbox">
-                <div class="item active">
-                    <img src="../images/prueba1.jpg" class="img-responsive" alt="" width="100%"/>
-                    <div class="carousel-caption">
-                        <h3>Siempre lo mas fresco</h3>
-                        <p>
-                            En TACOrporation nos preocupamos por que tus alimentos lleguen frescos a tu cocina.
-                        </p>
-
-                    </div>
-                </div>
-                <div class="item">
-                    <img src="../images/prueba2.jpg" class="img-responsive" alt="" width="100%"/>
-                    <div class="carousel-caption">
-                        <h3>Descuentos todo el año</h3>
-                        <p>
-                            Consideramos importante siempre dar la mejor calidad al mejor precio para tu disfrute
-                        </p>
-
-                    </div>
-                </div>
-                <div class="item">
-                    <img src="../images/prueba3.jpg" class="img-responsive" alt="" width="100%"/>
-                    <div class="carousel-caption">
-                        <h3>Atencion especializada</h3>
-                        <p>
-                            Nuestra atencion a clientes se especializa en brindarte el mejor servicio.
-                        </p>
-
-                    </div>
-                </div>
-            </div>
-
-            <a href="#carousel-1" class="left carousel-control" role="button" data-slide="prev">
-                <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-                <span class="sr-only">Anterior</span>
-            </a>
-            <a href="#carousel-1" class="right carousel-control" role="button" data-slide="next">
-                <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-                <span class="sr-only">Siguiente</span>
-            </a>
-
-        </div>
-
-
-
-
-
-        <section class="jumbotron jumbotron1-index">
-            <div class="container">
-                <h1>Destacado</h1>
-                <div class="container" id="tourpackages-carousel">
-
-                    <div class="row">
-
-                        <div class="col-xs-18 col-sm-6 col-md-3">
-                            <div class="thumbnail">
-                                <img src="../images/plantilla.png" alt="">
-                                <div class="caption">
-                                    <h2>PRODUCTO</h2>
-                                    <h2>PRECIO</h2>
-                                    <p>DESCRIPCION BIEN PINSHE SHIDORINA ALV</p>
-
-
-<?php if (!isset($_SESSION['name'])):
-    ?>
-                                        <a href="#" class="btn btn-info btn-xs" data-toggle="modal" data-target="#login-modal" role="button"><span class="glyphicon glyphicon-plus-sign"></span><span class="glyphicon glyphicon-shopping-cart"></span></a>
-                                    <?php else: { ?>
-                                            <a href="#" class="btn btn-info btn-xs"  role="button"><span class="glyphicon glyphicon-plus-sign"></span><span class="glyphicon glyphicon-shopping-cart"></span></a>
-
-                                            <input type="number" style='width:80px;' class="cantidad" id="cantidad" name="cantidad" tabindex="4" placeholder="Cant" required><br><br>
-
-        <?php
-    }
-    ?>
-                                    <?php endif; ?>
-
-
-
-                                </div>
-                            </div>
-                        </div>
-
-                    </div><!-- End row -->
-
-                </div><!-- End container -->
-            </div>
-        </section>
-
 
 
 
