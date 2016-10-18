@@ -11,7 +11,7 @@ include("../../html-php/funciones/GeneraEstado.php")
 <ntml lang="es">
 
   <head>
-    <Title>Inicio</title>
+    <Title>Tecnologia</title>
 	
       <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
@@ -25,6 +25,7 @@ include("../../html-php/funciones/GeneraEstado.php")
 <body>
 
 <header>
+
   <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
     <div class="container">
       <div class="navbar-header">
@@ -68,7 +69,7 @@ include("../../html-php/funciones/GeneraEstado.php")
               <li class="divider"></li>
               <li><a href="Comestibles.php"><span class="glyphicon glyphicon-apple"></span> Comestibles</a></li>
               <li class="divider"></li>
-              <li><a href="#"><span class="glyphicon glyphicon-tags"></span> Ofertas</a></li>
+              <li><a href="Ofertas.php"><span class="glyphicon glyphicon-tags"></span> Ofertas</a></li>
               <li class="divider"></li>
 
             </ul>
@@ -199,57 +200,12 @@ include("../../html-php/funciones/GeneraEstado.php")
       			</div>
       		  </div>
 
-      <div id="carousel-1" class="carousel slide" data-ride="carousel">
-        <ol class="carousel-indicators">
-          <li data-target="#carousel-1" data-slide-to="0" class="active"></li>
-          <li data-target="#carousel-1" data-slide-to="1" ></li>
-          <li data-target="#carousel-1" data-slide-to="2" ></li>
-        </ol>
+      
 
-        <div class="carousel-inner" role="listbox">
-          <div class="item active">
-            <img src="../images/prueba1.jpg" class="img-responsive" alt="" width="100%"/>
-            <div class="carousel-caption">
-              <h3>Siempre lo mas fresco</h3>
-              <p>
-                En TACOrporation nos preocupamos por que tus alimentos lleguen frescos a tu cocina.
-              </p>
-
-            </div>
-          </div>
-          <div class="item">
-            <img src="../images/prueba2.jpg" class="img-responsive" alt="" width="100%"/>
-            <div class="carousel-caption">
-              <h3>Descuentos todo el año</h3>
-              <p>
-                Consideramos importante siempre dar la mejor calidad al mejor precio para tu disfrute
-              </p>
-
-            </div>
-          </div>
-          <div class="item">
-            <img src="../images/prueba3.jpg" class="img-responsive" alt="" width="100%"/>
-            <div class="carousel-caption">
-              <h3>Atencion especializada</h3>
-              <p>
-                Nuestra atencion a clientes se especializa en brindarte el mejor servicio.
-              </p>
-
-            </div>
-          </div>
-        </div>
-
-        <a href="#carousel-1" class="left carousel-control" role="button" data-slide="prev">
-          <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-          <span class="sr-only">Anterior</span>
-        </a>
-        <a href="#carousel-1" class="right carousel-control" role="button" data-slide="next">
-          <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-          <span class="sr-only">Siguiente</span>
-        </a>
-
-      </div>
-
+		  
+		  
+		  
+		  
       <section class="jumbotron jumbotron1-index">
         <div class="container">
           <h1>Destacado</h1>
@@ -293,7 +249,11 @@ include("../../html-php/funciones/GeneraEstado.php")
         </div>
       </section>
 
-
+		  
+		  
+		  
+		  
+		  
 
       <footer class="navbar-default navbar-absolute-bottom">
         <div class="container-fluid">
@@ -302,7 +262,8 @@ include("../../html-php/funciones/GeneraEstado.php")
           <span>Ponganos 100</span>
         </div>
       </footer>
-
+	 
+	 
 </body>
 <script src="../js/jquery.js"></script>
 <script src="../js/bootstrap.min.js"></script>
