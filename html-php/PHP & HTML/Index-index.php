@@ -24,6 +24,8 @@
           <span class="icon-bar"></span>
         </button>
         <a href="#" class="navbar-brand">TACOrporation</a>
+        <a href="#" class="navbar-brand" data-toggle="modal" data-target="#login-modal">Iniciar sesion</a>
+        <a href="#" class="navbar-brand" data-toggle="modal" data-target="#login-modal2">Registrarse</a>
       </div>
       <div class="collapse navbar-collapse" id="Barra-Navegacion">
         <ul class="nav navbar-nav">
@@ -58,19 +60,32 @@
 <div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-hidden="true" style="display: none;">
     	  <div class="modal-dialog">
 				<div class="loginmodal-container">
-					<h1>Login to Your Account</h1><br>
+					<h1>Iniciar sesion</h1><br>
 				  <form>
 					<input type="text" name="user" placeholder="Username">
 					<input type="password" name="pass" placeholder="Password">
-					<input type="submit" name="login" class="login loginmodal-submit" value="Login">
+					<input type="submit" name="login" class="login loginmodal-submit" value="Iniciar sesion">
 				  </form>
 
 				  <div class="login-help">
-					<a href="#">Register</a> - <a href="#">Forgot Password</a>
+					<a href="#" data-toggle="modal" data-target="#login-modal2">Registrar una nueva cuenta</a>
 				  </div>
 				</div>
 			</div>
 		  </div>
+
+      <div class="modal fade" id="login-modal2" tabindex="-1" role="dialog" aria-hidden="true" style="display: none;">
+          	  <div class="modal-dialog">
+      				<div class="loginmodal-container">
+      					<h1>Registrar una nueva cuenta</h1><br>
+      				  <form>
+      					<input type="text" name="user" placeholder="Username">
+      					<input type="password" name="pass" placeholder="Password">
+      					<input type="submit" name="login" class="login loginmodal-submit" value="Registrarse">
+      				  </form>
+      				</div>
+      			</div>
+      		  </div>
 
       <div id="carousel-1" class="carousel slide" data-ride="carousel">
         <ol class="carousel-indicators">
