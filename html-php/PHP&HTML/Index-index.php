@@ -33,10 +33,10 @@
 			
 			?>
 		<a href="#" class="navbar-brand" data-toggle="modal" data-target="#login-modal">Iniciar sesion</a>
-        <a href="#" class="navbar-brand" data-toggle="modal" data-target="#login-modal2"><span class="glyphicon glyphicon-shopping-cart"></a>
+        <a href="#" class="navbar-brand" data-toggle="modal" data-target="#login-modal2">Registrarse</a>
 		<?php else: {	?>
 		<a href="#" class="navbar-brand" ><?php 	echo $_SESSION['name'];?>  </a>
-        <a href="#" class="navbar-brand" ><?php 	echo "Carrito" ?></a>
+        <a href="#" class="navbar-brand" ><span class="glyphicon glyphicon-shopping-cart"></a>
 	<?php
 		}
 			?>
