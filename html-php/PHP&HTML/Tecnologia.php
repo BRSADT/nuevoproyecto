@@ -69,7 +69,7 @@ include("../../html-php/funciones/GeneraEstado.php")
               <li class="divider"></li>
               <li><a href="Comestibles.php"><span class="glyphicon glyphicon-apple"></span> Comestibles</a></li>
               <li class="divider"></li>
-              <li><a href="Ofertas.php"><span class="glyphicon glyphicon-tags"></span> Ofertas</a></li>
+              <li><a href="#"><span class="glyphicon glyphicon-tags"></span> Ofertas</a></li>
               <li class="divider"></li>
 
             </ul>
@@ -200,7 +200,7 @@ include("../../html-php/funciones/GeneraEstado.php")
       			</div>
       		  </div>
 
-      
+  
 
 		  
 		  
