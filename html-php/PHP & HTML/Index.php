@@ -63,29 +63,29 @@
           <div class="item active">
             <img src="../images/prueba1.jpg" class="img-responsive" alt="" width="100%"/>
             <div class="carousel-caption">
-              <h3>sdfsdafsadf</h3>
+              <h3>Siempre lo mas fresco</h3>
               <p>
-                sfdsadfsfdfsd
+                En TACOrporation nos preocupamos por que tus alimentos lleguen frescos a tu cocina.
               </p>
 
             </div>
           </div>
           <div class="item">
-            <img src="../images/prueba1.jpg" class="img-responsive" alt="" width="100%"/>
+            <img src="../images/prueba2.jpg" class="img-responsive" alt="" width="100%"/>
             <div class="carousel-caption">
-              <h3>sdfsdafsadf</h3>
+              <h3>Descuentos todo el año</h3>
               <p>
-                sfdsadfsfdfsd
+                Consideramos importante siempre dar la mejor calidad al mejor precio para tu disfrute
               </p>
 
             </div>
           </div>
           <div class="item">
-            <img src="../images/prueba1.jpg" class="img-responsive" alt="" width="100%"/>
+            <img src="../images/prueba3.jpg" class="img-responsive" alt="" width="100%"/>
             <div class="carousel-caption">
-              <h3>sdfsdafsadf</h3>
+              <h3>Atencion especializada</h3>
               <p>
-                sfdsadfsfdfsd
+                Nuestra atencion a clientes se especializa en brindarte el mejor servicio.
               </p>
 
             </div>
