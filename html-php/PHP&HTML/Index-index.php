@@ -270,9 +270,9 @@ include("../../html-php/funciones/GeneraEstado.php");
 
 <?php if (!isset($_SESSION['name'])):
     ?>
-                                        <a href="#" class="btn btn-info btn-xs" data-toggle="modal" data-target="#login-modal" role="button"><span class="glyphicon glyphicon-plus-sign"></span><span class="glyphicon glyphicon-shopping-cart"></span></a>
+                                        <a href="#" class="btn btn-info" data-toggle="modal" data-target="#login-modal" role="button"><span class="glyphicon glyphicon-plus-sign"></span><span class="glyphicon glyphicon-shopping-cart"></span></a>
                                     <?php else: { ?>
-                                            <a href="#" class="btn btn-info btn-xs"  role="button"><span class="glyphicon glyphicon-plus-sign"></span><span class="glyphicon glyphicon-shopping-cart"></span></a>
+                                            <a href="#" class="btn btn-info"  role="button"><span class="glyphicon glyphicon-plus-sign"></span><span class="glyphicon glyphicon-shopping-cart"></span></a>
 
                                             <input type="number" style='width:80px;' class="cantidad" id="cantidad" name="cantidad" tabindex="4" placeholder="Cant" required><br><br>
 
