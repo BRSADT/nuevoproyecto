@@ -2,7 +2,7 @@
 function miFuncion()
 {
 
-window.location.replace("../html-php/PHP&HTML/Index-index.php")
+window.location.replace("../PHP&HTML/Index-index.php")
 }
 
 
@@ -78,7 +78,7 @@ $datos=datosDeSesion($ObjBD);
 	echo  $_SESSION['apellido'];
 	echo  $_SESSION['email'];
 
-header('Location: ../html-php/PHP&HTML/Index-index.php');
+header('Location: ../PHP&HTML/Index-index.php');
 	}
 else
 {
