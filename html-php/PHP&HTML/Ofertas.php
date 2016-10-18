@@ -6,7 +6,6 @@ include("../../html-php/funciones/GeneraEstado.php");
 include("../../html-php/funciones/MostrarProductos.php");
 ?>
 
-<br>
 
 
 <!DOCTYPE html>
