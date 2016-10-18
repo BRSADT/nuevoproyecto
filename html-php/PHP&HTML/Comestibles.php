@@ -1,7 +1,9 @@
 
 <?php
 header("Content-Type: text/html;charset=utf-8"); 
-include("../../html-php/funciones/GeneraEstado.php")
+include("../../html-php/funciones/GeneraEstado.php");
+
+include("../../html-php/funciones/MostrarProductos.php");
  ?>
 
 <br>
@@ -206,48 +208,27 @@ include("../../html-php/funciones/GeneraEstado.php")
 		  
 		  
 		  
-      <section class="jumbotron jumbotron1-index">
+    	  
+     <section class="jumbotron jumbotron1-index">
         <div class="container">
           <h1>Destacado</h1>
-          <div class="container" id="tourpackages-carousel">
-
-<div class="row">
-
-  <div class="col-xs-18 col-sm-6 col-md-3">
-    <div class="thumbnail">
-      <img src="http://placehold.it/500x300" alt="">
-        <div class="caption">
-          <h2>PRODUCTO</h2>
-          <h2>PRECIO</h2>
-          <p>DESCRIPCION BIEN PINSHE SHIDORINA ALV</p>
-		
+		  
 		 
-			<?php 	if(!isset($_SESSION['name'])): 
 			
-			?>
-          <a href="#" class="btn btn-info btn-xs" data-toggle="modal" data-target="#login-modal" role="button"><span class="glyphicon glyphicon-plus-sign"></span><span class="glyphicon glyphicon-shopping-cart"></span></a>
-<?php else: {	?>
-	 <a href="#" class="btn btn-info btn-xs"  role="button"><span class="glyphicon glyphicon-plus-sign"></span><span class="glyphicon glyphicon-shopping-cart"></span></a>
-	
-<input type="number" style='width:80px;' class="cantidad" id="cantidad" name="cantidad" tabindex="4" placeholder="Cant" required><br><br>			
-		
-	<?php
-		}
-		
-			?>
-			<?php endif;?>	  
-		  
-		  
-		  
-		  </div>
-    </div>
-  </div>
+        <div class="container" id="tourpackages-carousel">
 
-</div><!-- End row -->
+  <div class="row">
+  
 
-</div><!-- End container -->
-        </div>
-      </section>
+<?php
+  MostrarProductosComestibles(); ?>
+  	
+
+</div> 
+
+</div>
+</div>
+      </section> 
 
 		  
 		  

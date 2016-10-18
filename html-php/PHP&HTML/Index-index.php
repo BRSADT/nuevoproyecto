@@ -69,7 +69,7 @@ include("../../html-php/funciones/GeneraEstado.php")
               <li class="divider"></li>
               <li><a href="Comestibles.php"><span class="glyphicon glyphicon-apple"></span> Comestibles</a></li>
               <li class="divider"></li>
-              <li><a href="#"><span class="glyphicon glyphicon-tags"></span> Ofertas</a></li>
+              <li><a href="Ofertas.php"><span class="glyphicon glyphicon-tags"></span> Ofertas</a></li>
               <li class="divider"></li>
 
             </ul>
@@ -264,7 +264,7 @@ include("../../html-php/funciones/GeneraEstado.php")
 
   <div class="col-xs-18 col-sm-6 col-md-3">
     <div class="thumbnail">
-      <img src="http://placehold.it/500x300" alt="">
+      <img src="../images/plantilla.png" alt="">
         <div class="caption">
           <h2>PRODUCTO</h2>
           <h2>PRECIO</h2>
