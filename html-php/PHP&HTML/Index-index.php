@@ -24,8 +24,25 @@
           <span class="icon-bar"></span>
         </button>
         <a href="#" class="navbar-brand">TACOrporation</a>
-        <a href="#" class="navbar-brand" data-toggle="modal" data-target="#login-modal">Iniciar sesion</a>
-        <a href="#" class="navbar-brand" data-toggle="modal" data-target="#login-modal2">Registrarse</a>
+        
+		
+		
+		<?php
+			session_start();?>
+			<?php 	if(!isset($_SESSION['name'])): 
+			
+			?>
+		<a href="#" class="navbar-brand" data-toggle="modal" data-target="#login-modal">Iniciar sesion</a>
+        <a href="#" class="navbar-brand" data-toggle="modal" data-target="#login-modal2"><span class="glyphicon glyphicon-shopping-cart"></a>
+		<?php else: {	?>
+		<a href="#" class="navbar-brand" ><?php 	echo $_SESSION['name'];?>  </a>
+        <a href="#" class="navbar-brand" ><?php 	echo "Carrito" ?></a>
+	<?php
+		}
+			?>
+		
+			<?php endif;?>
+		
       </div>
       <div class="collapse navbar-collapse" id="Barra-Navegacion">
         <ul class="nav navbar-nav">
@@ -46,8 +63,20 @@
 
           <li><a href="#"><span class="glyphicon glyphicon-envelope"></span> Contacto</a></li>
           <li><a href="#"><span class="glyphicon glyphicon-sunglasses"></span> Acerca de nosotros</a></li>
-          <li><a href="#" data-toggle="modal" data-target="#login-modal">Login</a></li>
-        </ul>
+        
+		<?php 	if(!isset($_SESSION['name'])): 
+			
+			?>
+		<li><a href="#" data-toggle="modal" data-target="#login-modal">Login</a></li>
+        <?php else: {	?>
+		<li><a href="../../funciones/CerrarSesion.php" >Logout</a></li>
+		<?php
+		}
+			?>
+			<?php endif;?>
+			
+			
+		</ul>
       </div>
     </div>
   </nav>
@@ -59,18 +88,29 @@
 
 <div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-hidden="true" style="display: none;">
     	  <div class="modal-dialog">
+				
 				<div class="loginmodal-container">
 					<h1>Iniciar sesion</h1><br>
-				  <form>
-					<input type="text" name="user" placeholder="Username">
-					<input type="password" name="pass" placeholder="Password">
+				  
+				  
+				  
+				 <form name="registrar" method="POST"  action="../../funciones/ExistenciaUsuario.php"></br>
+		
+		<input type="text" class="text" id="usuario" name="usuario" tabindex="4" placeholder="Usuario" minlength="5" maxlength="20" required><br>		<br>
+				<input type="password" class="text"  id="pass" name="pass" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Debe contener al menos un numero una Letra mayuscula una minuscula, y minimo 8 o más caracteres"  placeholder="Contraseña 1" required><br><br>
+
 					<input type="submit" name="login" class="login loginmodal-submit" value="Iniciar sesion">
 				  </form>
 
+				  
+				  
+				  
 				  <div class="login-help">
 					<a href="#" data-toggle="modal" data-target="#login-modal2">Registrar una nueva cuenta</a>
 				  </div>
 				</div>
+				
+				
 			</div>
 		  </div>
 

@@ -77,8 +77,8 @@ $datos=datosDeSesion($ObjBD);
 				echo  $_SESSION['name'];
 	echo  $_SESSION['apellido'];
 	echo  $_SESSION['email'];
+
 header('Location: ../html-php/PHP&HTML/Index-index.php');
-	
 	}
 else
 {

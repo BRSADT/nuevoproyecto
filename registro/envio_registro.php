@@ -2,7 +2,7 @@
 function miFuncion()
 {
 
-window.location.replace("../ingresar/Login.php")
+window.location.replace("../html-php/PHP&HTML/Index-index.php")
 }
 function miFuncion2()
 {

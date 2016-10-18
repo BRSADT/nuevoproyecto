@@ -2,4 +2,4 @@
 session_start();
 session_destroy();
 session_unset();
-header('Location: ../ingresar/Login.php');
+header('Location: ../html-php/PHP&HTML/Index-index.php');
