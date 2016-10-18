@@ -14,7 +14,7 @@ mysqli_query($enlace,"SET NAMES 'utf8'");
  
 
    <div class="thumbnail">	
-   <img src="../images/plantilla.png" alt=""> </img>
+   <img src="../images/'.$registro['Imagen'].'" alt="" style="height: 300px;width: 500px;" > </img>
         <div class="caption">
           <h4>'.$registro['Nombre'].'</h4>
           <h3>$'.$registro['Precio'].'</h3>
@@ -66,7 +66,7 @@ mysqli_query($enlace,"SET NAMES 'utf8'");
  
 
    <div class="thumbnail">	
-   <img src="../images/plantilla.png" alt=""> </img>
+ <img src="../images/'.$registro['Imagen'].'" alt="" style="height: 300px;width: 500px;" > </img>
         <div class="caption">
           <h4>'.$registro['Nombre'].'</h4>
           <h3>$'.$registro['Precio'].'</h3>
@@ -118,7 +118,7 @@ mysqli_query($enlace,"SET NAMES 'utf8'");
  
 
    <div class="thumbnail">	
-   <img src="../images/plantilla.png" alt=""> </img>
+   <img src="../images/'.$registro['Imagen'].'" alt="" style="height: 300px;width: 500px;" > </img>
         <div class="caption">
           <h4>'.$registro['Nombre'].'</h4>
           <h3>$'.$registro['Precio'].'</h3>

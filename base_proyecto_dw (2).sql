@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 18-10-2016 a las 04:57:14
+-- Tiempo de generación: 18-10-2016 a las 23:20:07
 -- Versión del servidor: 5.6.17
 -- Versión de PHP: 5.5.12
 
@@ -29,6 +29,18 @@ CREATE DEFINER=`root`@`localhost` PROCEDURE `userData`(IN `usr` VARCHAR(10))
 SELECT persona.Nombre as name, persona.`Apellido` as apellido , persona.`Email` as email FROM persona where persona.Usuario=usr$$
 
 DELIMITER ;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `carrito`
+--
+
+CREATE TABLE IF NOT EXISTS `carrito` (
+  `Id_Producto` int(11) NOT NULL,
+  `Id_Usuario` int(11) NOT NULL,
+  `Cantidad` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -2628,7 +2640,7 @@ CREATE TABLE IF NOT EXISTS `persona` (
   `NoTarjeta` varchar(20) NOT NULL,
   `TitularT` varchar(30) NOT NULL,
   PRIMARY KEY (`Id_Persona`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=60 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=62 ;
 
 --
 -- Volcado de datos para la tabla `persona`
@@ -2637,7 +2649,9 @@ CREATE TABLE IF NOT EXISTS `persona` (
 INSERT INTO `persona` (`Pass`, `Usuario`, `Nombre`, `Apellido`, `Id_Persona`, `Email`, `Admin`, `estado`, `municipio`, `Domicilio`, `Banco`, `NoTarjeta`, `TitularT`) VALUES
 ('1', '1', 'Nombre', 'Apellido', 51, 'Email', 0, 'sasd', 'municipios', 'calle', 'tarjeta', '123', 'Titul'),
 ('Casa36606460', 'brendaA', 'Brenda Samantha', 'Avila De la torre', 58, 'brendasamant@hotmail.com', 0, 'Jalisco', 'Autlán de Navarro', 'pso de los colorines 2231', 'American Express', '345449494973434', 'Brenda Samantha Avila De la to'),
-('Carlos123456', 'CarlosR', 'Carlos Alejandro', 'Rosales Celis', 59, 'carlosrosales@hotmail.com', 0, 'Jalisco', 'Guadalajara', 'No se :v', 'Visa', '4871862627791248', 'Su papÃ¡ :v');
+('Carlos123456', 'CarlosR', 'Carlos Alejandro', 'Rosales Celis', 59, 'carlosrosales@hotmail.com', 0, 'Jalisco', 'Guadalajara', 'No se :v', 'Visa', '4871862627791248', 'Su papÃ¡ :v'),
+('Casa36606460', 'BrendaAvila', 'Brenda Samantha', 'Avila De la torre', 60, 'brendasamnt@hotmail.com', 0, 'Jalisco', 'Guadalajara', '', 'American Express', '4863974057563581', 'Avila'),
+('Moyselacome123', 'LIMA123', 'Ivan', 'Morett', 61, 'luisivanmorett@gmail.com', 0, 'Jalisco', 'Guadalajara', 'juan Ã¡lvarez 1282', 'Visa', '4152313182795674', 'Ivan');
 
 -- --------------------------------------------------------
 
@@ -2651,6 +2665,9 @@ CREATE TABLE IF NOT EXISTS `producto` (
   `Descripcion` varchar(255) NOT NULL,
   `Stock` int(100) NOT NULL,
   `Id_Producto` int(10) NOT NULL AUTO_INCREMENT,
+  `Id_Departamento` int(10) NOT NULL,
+  `Descuento` int(11) NOT NULL,
+  `Imagen` varchar(200) NOT NULL,
   PRIMARY KEY (`Id_Producto`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=16 ;
 
@@ -2658,17 +2675,17 @@ CREATE TABLE IF NOT EXISTS `producto` (
 -- Volcado de datos para la tabla `producto`
 --
 
-INSERT INTO `producto` (`Precio`, `Nombre`, `Descripcion`, `Stock`, `Id_Producto`) VALUES
-(6990, 'LENOVO - LAPTOP 100S DE 14"', 'Pantalla 14" HD 2GB RAM DDR3 64GB disco duro Proce', 10, 1),
-(6999, 'HP-LAPTOP 15-AY007LA DE 15.6"', 'Disco duro SATA 500GB 4GB RAM DDR3 Pantalla 15.6" ', 5, 2),
-(1999, 'HP-MULTIFUNCIONAL INK ADVANTAGE DE INYECCION DE TI', 'Imprime,copia y escanea con una gran calidad incluso desde tu movil con esta impresora HP.\r\n', 12, 3),
-(15999, 'MOTOROLA-CELULAR MOTO Z', 'Disfruta de este celular con su atractiva funcion multi-modulo para una mayor personalizacion de tu celular.\r\n', 20, 4),
-(3999, 'BOSE-BOCINA SOUNDLINK MINI II\r\n', 'Dejate llevar con tu musica favorita con un sonido pleno con bajos sorprendentes y un altavoz con calidad superior con el que podrás tomar llamadas sin problema alguno.\r\n', 8, 5),
-(10, '1KG DE JITOMATE ROJO\r\n', 'No hay jitomate más rojo y fresco que el nuestro.\r\n', 45, 6),
-(11, 'SABRITAS 450g\r\n', 'Disfruta de la mejor bolsa de aire en el mercado.\r\n', 23, 7),
-(12, 'COCA-COLA 500ml\r\n', 'Saca una sonrisa con tu coca-cola en todo momento. (Nota: No nos hacemos responsables de que te de diabetes o cancer)\r\n', 19, 8),
-(18, 'LECHE-SELLO ROJO 1L\r\n', 'Leshita para acompañar al panesito.\r\n', 30, 9),
-(10, 'PINGÜINO MARINELA\r\n', 'Deliciosos pastelitos rellenos de crema que haran de tu día uno más feliz\r\n\r\n\r\n', 50, 10);
+INSERT INTO `producto` (`Precio`, `Nombre`, `Descripcion`, `Stock`, `Id_Producto`, `Id_Departamento`, `Descuento`, `Imagen`) VALUES
+(6990, 'LENOVO - LAPTOP 100S DE 14"', 'Pantalla 14" HD 2GB RAM DDR3 64GB disco duro Proce', 10, 1, 1, 15, 'lenovo_laptop.jpg'),
+(6999, 'HP-LAPTOP 15-AY007LA DE 15.6"', 'Disco duro SATA 500GB 4GB RAM DDR3 Pantalla 15.6" ', 5, 2, 1, 20, 'laptop_hp.png'),
+(1999, 'HP-MULTIFUNCIONAL INK ADVANTAGE DE INYECCION DE TI', 'Imprime,copia y escanea con una gran calidad incluso desde tu movil con esta impresora HP.\r\n', 12, 3, 1, 0, 'impresora_hp.jpg'),
+(15999, 'MOTOROLA-CELULAR MOTO Z', 'Disfruta de este celular con su atractiva funcion multi-modulo para una mayor personalizacion de tu celular.\r\n', 20, 4, 1, 10, 'moto_z.jpg'),
+(3999, 'BOSE-BOCINA SOUNDLINK MINI II\r\n', 'Dejate llevar con tu musica favorita con un sonido pleno con bajos sorprendentes y un altavoz con calidad superior con el que podrás tomar llamadas sin problema alguno.\r\n', 8, 5, 1, 0, 'bocinas_bose.jpg'),
+(10, '1KG DE JITOMATE ROJO\r\n', 'No hay jitomate más rojo y fresco que el nuestro.\r\n', 45, 6, 2, 0, 'Jitomates-bola.jpg'),
+(11, 'SABRITAS 450g\r\n', 'Disfruta de la mejor bolsa de aire en el mercado.\r\n', 23, 7, 2, 50, 'Sabritas.png'),
+(12, 'COCA-COLA 500ml\r\n', 'Saca una sonrisa con tu coca-cola en todo momento. (Nota: No nos hacemos responsables de que te de diabetes o cancer)\n', 19, 8, 2, 0, 'coca_cola.png'),
+(18, 'LECHE-SELLO ROJO 1L\r\n', 'Leshita para acompañar al panesito.\r\n', 30, 9, 2, 25, 'lecha_1lt.png'),
+(10, 'PINGÜINO MARINELA\r\n', 'Deliciosos pastelitos rellenos de crema que haran de tu día uno más feliz\r\n\r\n\r\n', 50, 10, 2, 0, 'Pin_mar.png');
 
 -- --------------------------------------------------------
 
@@ -2680,6 +2697,8 @@ CREATE TABLE IF NOT EXISTS `ticket` (
   `Id_Ticket` int(10) NOT NULL AUTO_INCREMENT,
   `Compra` int(255) NOT NULL,
   `Total` int(255) NOT NULL,
+  `Fecha_compra` date NOT NULL,
+  `Fecha_entrega` date NOT NULL,
   PRIMARY KEY (`Id_Ticket`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1213 ;
 
