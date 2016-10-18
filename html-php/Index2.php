@@ -7,6 +7,7 @@
       <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/estilos.css">
+        <link rel="stylesheet" href="css/fuentes.css">
   </head>
 <body>
 
@@ -113,53 +114,10 @@
     <div class="thumbnail">
       <img src="http://placehold.it/500x300" alt="">
         <div class="caption">
-          <h4>Thumbnail label</h4>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere, soluta, eligendi doloribus sunt minus amet sit debitis repellat. Consectetur, culpa itaque odio similique suscipit</p>
-          <p><a href="#" class="btn btn-info btn-xs" role="button">Button</a> <a href="#" class="btn btn-default btn-xs" role="button">Button</a></p>
-      </div>
-    </div>
-  </div>
-
-  <div class="col-xs-18 col-sm-6 col-md-3">
-    <div class="thumbnail">
-      <img src="http://placehold.it/500x300" alt="">
-        <div class="caption">
-          <h4>Thumbnail label</h4>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere, soluta, eligendi doloribus sunt minus amet sit debitis repellat. Consectetur, culpa itaque odio similique suscipit</p>
-          <p><a href="#" class="btn btn-info btn-xs" role="button">Button</a> <a href="#" class="btn btn-default btn-xs" role="button">Button</a></p>
-      </div>
-    </div>
-  </div>
-
-  <div class="col-xs-18 col-sm-6 col-md-3">
-    <div class="thumbnail">
-      <img src="http://placehold.it/500x300" alt="">
-        <div class="caption">
-          <h4>Thumbnail label</h4>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere, soluta, eligendi doloribus sunt minus amet sit debitis repellat. Consectetur, culpa itaque odio similique suscipit</p>
-          <p><a href="#" class="btn btn-info btn-xs" role="button">Button</a> <a href="#" class="btn btn-default btn-xs" role="button">Button</a></p>
-      </div>
-    </div>
-  </div>
-
-  <div class="col-xs-18 col-sm-6 col-md-3">
-    <div class="thumbnail">
-      <img src="http://placehold.it/500x300" alt="">
-        <div class="caption">
-          <h4>Thumbnail label</h4>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere, soluta, eligendi doloribus sunt minus amet sit debitis repellat. Consectetur, culpa itaque odio similique suscipit</p>
-          <p><a href="#" class="btn btn-info btn-xs" role="button">Button</a> <a href="#" class="btn btn-default btn-xs" role="button">Button</a></p>
-      </div>
-    </div>
-  </div>
-
-  <div class="col-xs-18 col-sm-6 col-md-3">
-    <div class="thumbnail">
-      <img src="http://placehold.it/500x300" alt="">
-        <div class="caption">
-          <h4>Thumbnail label</h4>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere, soluta, eligendi doloribus sunt minus amet sit debitis repellat. Consectetur, culpa itaque odio similique suscipit</p>
-          <p><a href="#" class="btn btn-info btn-xs" role="button">Button</a> <a href="#" class="btn btn-default btn-xs" role="button">Button</a></p>
+          <h2>PRODUCTO</h2>
+          <h2>PRECIO</h2>
+          <p>DESCRIPCION BIEN PINSHE SHIDORINA ALV</p>
+          <a href="#" class="btn btn-info btn-xs" role="button"><span class="glyphicon glyphicon-plus-sign"></span><span class="glyphicon glyphicon-shopping-cart"></span></a>
       </div>
     </div>
   </div>

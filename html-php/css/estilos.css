@@ -1,3 +1,9 @@
+*{
+  font-family: 'Montserrat', sans-serif;
+}
+
+/*Jumbotron*/
+
 .jumbotron h1{
   text-align: center;
 }
@@ -6,27 +12,7 @@
   margin-bottom: 0;
 }
 
-@font-face {
-  font-family: 'Montserrat';
-  font-style: normal;
-  font-weight: 400;
-  src: local('Montserrat-Regular'), url(../fonts/zhcz-_WihjSQC0oHJ9TCYPk_vArhqVIZ0nv9q090hN8.woff2) format('woff2');
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
-}
-
-*{
-  font-family: 'Montserrat', sans-serif;
-}
-
-footer {
-      text-align: center;
-    background-color: #F3F3F3;
-    padding: 20px;
-}
-
-footer hr{
- width: 10%;
-}
+/*PRODUCTOS*/
 
 .thumbnail {
     position: relative;
@@ -36,4 +22,16 @@ footer hr{
 
 .thumbnail img {
     width: 100%;
+}
+
+/*FOOTER*/
+
+footer {
+      text-align: center;
+    background-color: #F3F3F3;
+    padding: 20px;
+}
+
+footer hr{
+ width: 10%;
 }
