@@ -44,6 +44,7 @@
 
           <li><a href="#"><span class="glyphicon glyphicon-envelope"></span> Contacto</a></li>
           <li><a href="#"><span class="glyphicon glyphicon-sunglasses"></span> Acerca de nosotros</a></li>
+          <li><a href="#" data-toggle="modal" data-target="#login-modal">Login</a></li>
         </ul>
       </div>
     </div>
@@ -51,6 +52,25 @@
 
 </header>
 
+<br><br>
+
+
+<div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-hidden="true" style="display: none;">
+    	  <div class="modal-dialog">
+				<div class="loginmodal-container">
+					<h1>Login to Your Account</h1><br>
+				  <form>
+					<input type="text" name="user" placeholder="Username">
+					<input type="password" name="pass" placeholder="Password">
+					<input type="submit" name="login" class="login loginmodal-submit" value="Login">
+				  </form>
+
+				  <div class="login-help">
+					<a href="#">Register</a> - <a href="#">Forgot Password</a>
+				  </div>
+				</div>
+			</div>
+		  </div>
 
       <div id="carousel-1" class="carousel slide" data-ride="carousel">
         <ol class="carousel-indicators">
@@ -127,6 +147,8 @@
 </div><!-- End container -->
         </div>
       </section>
+
+
 
       <footer class="navbar-default navbar-absolute-bottom">
         <div class="container-fluid">
