@@ -141,10 +141,14 @@ mysqli_query($enlace,"SET NAMES 'utf8'");
 <a href="#" class="btn btn-info btn-xs" data-toggle="modal" data-target="#login-modal" role="button">
 <span class="glyphicon glyphicon-plus-sign"></span>
 <span class="glyphicon glyphicon-shopping-cart"></span></a>';
- else: echo ' <a href="#" class="btn btn-info btn-xs"  role="button"><span class="glyphicon glyphicon-plus-sign"></span><span class="glyphicon glyphicon-shopping-cart"></span></a>
+ else: echo ' 
 
-	
-<input type="number" style="width:80px;" class="cantidad" id="cantidad" name="cantidad" tabindex="4" max='.$registro['Stock'].' placeholder="Cant" required><br><br></input>';
+<form action="NostrarProductos.php">	
+<input type="number" style="width:80px;" class="cantidad" id="cantidad" name="cantidad" tabindex="4" max='.$registro['Stock'].' placeholder="Cant" required><br><br></input>
+<button type="submit" class="btn btn-info"><span class="glyphicon glyphicon-plus-sign"></span><span class="glyphicon glyphicon-shopping-cart"></span></button>
+
+
+</form>';
  endif; 
 
 	echo '
