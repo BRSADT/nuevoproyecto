@@ -1,7 +1,7 @@
 <script>
 function miFuncion()
 {
-window.history.back();
+
 
 }
 
@@ -88,7 +88,14 @@ $STATEMENT="UPDATE `base_proyecto_dw`.`carrito` SET `Cantidad` = '$Cantidad' WHE
 $STATEMENT="INSERT INTO carrito (Id_Producto,Id_Usuario,Cantidad) VALUES ('$ID_Producto','$ID_Persona','$Cantidad')";
 mysqli_query($enlace,$STATEMENT);
 mysqli_query($enlace,"SET NAMES 'utf8'");
+echo ('<script> 
 
+alert("Se inserto") ;
+
+</script>');
+	
+	
+	
 
 }
 
