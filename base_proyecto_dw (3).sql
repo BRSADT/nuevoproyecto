@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 18-10-2016 a las 23:20:07
+-- Tiempo de generación: 19-10-2016 a las 06:19:45
 -- Versión del servidor: 5.6.17
 -- Versión de PHP: 5.5.12
 
@@ -26,7 +26,7 @@ DELIMITER $$
 --
 CREATE DEFINER=`root`@`localhost` PROCEDURE `userData`(IN `usr` VARCHAR(10))
     NO SQL
-SELECT persona.Nombre as name, persona.`Apellido` as apellido , persona.`Email` as email FROM persona where persona.Usuario=usr$$
+SELECT persona.Nombre as name, persona.`Apellido` as apellido , persona.`Email` as email, persona.`Id_Persona` as ID_P FROM persona where persona.Usuario=usr$$
 
 DELIMITER ;
 
@@ -39,8 +39,28 @@ DELIMITER ;
 CREATE TABLE IF NOT EXISTS `carrito` (
   `Id_Producto` int(11) NOT NULL,
   `Id_Usuario` int(11) NOT NULL,
-  `Cantidad` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `Cantidad` int(11) NOT NULL,
+  `Id_Carrito` int(11) NOT NULL AUTO_INCREMENT,
+  PRIMARY KEY (`Id_Carrito`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=32 ;
+
+--
+-- Volcado de datos para la tabla `carrito`
+--
+
+INSERT INTO `carrito` (`Id_Producto`, `Id_Usuario`, `Cantidad`, `Id_Carrito`) VALUES
+(4, 59, 3, 20),
+(6, 59, 2, 21),
+(4, 58, 3, 22),
+(3, 58, 2, 23),
+(7, 58, 3, 24),
+(6, 58, 3, 25),
+(8, 58, 2, 26),
+(8, 58, 5, 27),
+(4, 58, 1, 28),
+(9, 58, 1, 29),
+(8, 58, 1, 30),
+(8, 58, 2, 31);
 
 -- --------------------------------------------------------
 
