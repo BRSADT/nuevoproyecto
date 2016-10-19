@@ -8,7 +8,6 @@ window.history.back();
 
 
 </script>
-
 <?php
 
 
@@ -63,7 +62,7 @@ $ID_PR=$registro['Id_Producto'];
 	
 $STATEMEN="INSERT INTO compra (Id_Ticket,Id_Persona,Id_producto) VALUES ('$id_Ticket','$idP','$ID_PR')";
 mysqli_query($enlace,$STATEMEN);
-//actualizarBDD($id_Ticket);
+actualizarBDD($id_Ticket,$idP);
 
 }
 
@@ -75,28 +74,61 @@ mysqli_query($enlace,$STATEMEN);
 
 
 
-/*
-function actualizarBDD($id_Ticket)
+
+function actualizarBDD($id_Ticket,$idP)
 {
 
 	$enlace = mysqli_connect("localhost", "root", "", "base_proyecto_dw");
 
 
-	$consulta=mysqli_query($enlace,"SELECT `Id_Compra`,`Id_Producto` FROM `compra` where `Id_Ticket`='$id_Ticket'");
+	$consul=mysqli_query($enlace,"SELECT carrito.Id_Producto,carrito.Cantidad, producto.Stock FROM `carrito` inner join producto on producto.Id_Producto=carrito.Id_Producto where carrito.Id_Usuario='$idP'");
 
+	while ($fila=mysqli_fetch_row($consul))
+	{
+	//id producto
+	 $fila[0];
+
+	//cantidad
+	 $fila[1];
+	//stock
+		$fila[2];
+		
+
+$CantidadActual=$fila[2]-$fila[1];
+
+$IDPRODUCTO=$fila[0];
+$STAT="UPDATE `base_proyecto_dw`.`producto` SET `Stock` = '$CantidadActual' where producto.Id_Producto = '$IDPRODUCTO'";
+		
+mysqli_query($enlace,$STAT);
+		}
 	
-	while($registro=mysqli_fetch_array($consulta, MYSQLI_ASSOC))
-	{ 
-	$id_Ticket=$registro['Id_ticket'];
-	}
-	 insertarcompra($id_Ticket);
+	
+
+eliminarCarrito($idP);
+
+}
+
+
+function eliminarCarrito ($idP){
+
+$enlace = mysqli_connect("localhost", "root", "", "base_proyecto_dw");
+
+$STAT="DELETE FROM carrito where carrito.Id_Usuario = '$idP'";
+		
+mysqli_query($enlace,$STAT);
+echo ('<script>
+
+
+miFuncion()
+</script>');
+
 
 
 }
 
 
-*/
 
+/*
 function insertarcompra($id_Ticket)
 {
 session_start();
@@ -128,7 +160,7 @@ mysqli_query($enlace,$STATEMEN);
 
 }
 
-
+*/
 
 
 
@@ -148,22 +180,14 @@ if (isset($_POST["fecha"])) {
 
 
 $fecha=$_POST["fecha"];
-echo $fecha;
-echo "-->";
+
 $date=date_create("$fecha");
 date_add($date,date_interval_create_from_date_string("8 days"));
 $date_ent=date_format($date,"Y-m-d");
-echo $date_ent ;
 
-echo "-->";
 $Total=$_POST["Total"];
 $Compra=$_POST["Compra"];
-echo $Total ;
 
-echo "-->";
-echo $Compra ;
-
-echo "-->";
 
 
 insertarTicket($fecha,$date_ent,$Compra,$Total);

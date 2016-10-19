@@ -1,7 +1,6 @@
 <?php
 function MostrarProductosCarrito()
 {
- session_start(); 
 $totalsinDesc=0;
 $Descuento=0;
 $TotalR=0;
