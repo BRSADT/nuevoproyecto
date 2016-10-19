@@ -1,7 +1,7 @@
 <?php
 function MostrarProductosCarrito()
 {
-
+ session_start(); 
 $totalsinDesc=0;
 $Descuento=0;
 $TotalR=0;
@@ -20,6 +20,7 @@ $ID_P=$_SESSION['ID_P'];
 
 	while($registro=mysqli_fetch_array($consulta, MYSQLI_ASSOC))
 	{ $totalP=0;
+	if($registro['Cantidad']>0){
 	echo '
 	 <div class="col-sm-12 col-md-10 col-md-offset-1">
                     <table class="table table-hover">
@@ -43,7 +44,7 @@ $ID_P=$_SESSION['ID_P'];
                                     </div>
                                 </div></td>
                                 <td class="col-md-1" style="text-align: center">
-                                <input type="email" class="form-control" id="exampleInputEmail1" value="'.$registro['Cantidad'].'">
+                                <input type="email" class="form-control" id="exampleInputEmail1"  value="'.$registro['Cantidad'].'"readonly>
                                 </td>
                                 <td class="col-md-1 text-center"><strong>$'.$registro['Precio'].'</strong></td>' ;
 								$totalP=$registro['Cantidad']*$registro['Precio'];
@@ -60,7 +61,7 @@ $ID_P=$_SESSION['ID_P'];
 
                             </tr>
 							
-	';
+	';}
 	$count++;
 	}
 						echo'	
@@ -117,19 +118,39 @@ $ID_P=$_SESSION['ID_P'];
                               <td>   </td>
                               <td>   </td>
                               <td>   </td>
+    </tr>
+
+
+<form name="Compra" method="POST" action="../funciones/MandarATicket.php">
+<input type="hidden" name="Compra" value='.$totalsinDesc.'>
+<input type="hidden" name="Total" value='.$TotalR.'>
+<input type="hidden" name="ID_Persona" value='.$_SESSION['ID_P'].'>
+							<td>
+                              <input type="date" class="text" id="fecha" name="fecha" tabindex="6" max="2050-10-18" min="2016-10-18" required></td>
+                          
                               <td>
-                                <a href="Index-index.php">
-                              <button type="button" class="btn btn-default">
+
+
+							  <a href="Index-index.php">
+
+								<button type="button" class="btn btn-default">
 
                                   <span class="glyphicon glyphicon-shopping-cart"></span> Seguir comprando
+								  
 
                               </button></a></td>
                               <td>
-                              <button type="button" class="btn btn-success">
+                              <button type="submit" class="btn btn-success">
                                   Comprar <span class="glyphicon glyphicon-play"></span>
                               </button></td>
-                          </tr>
-                      </tbody>
+
+
+</form>;
+
+
+							  </tr>
+
+						  </tbody>
                   </table>
               </div>
 	';

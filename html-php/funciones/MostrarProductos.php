@@ -32,7 +32,7 @@ mysqli_query($enlace,"SET NAMES 'utf8'");
 <input type="hidden" name="Nombre" value='.$registro['Nombre'].'>
 <input type="hidden" name="ID_Producto" value='.$registro['Id_Producto'].'>
 <input type="hidden" name="ID_Persona" value='.$_SESSION['ID_P'].'>
-<input type="number" style="width:80px;" class="cantidad" id="cantidad" name="cantidad" tabindex="4"  max='.$registro['Stock'].' placeholder="Cant" required><br><br></input>
+<input type="number" style="width:80px;" class="cantidad" id="cantidad" name="cantidad" tabindex="4"  min="0" max='.$registro['Stock'].' placeholder="Cant" required><br><br></input>
 <button type="submit" class="btn btn-info"><span class="glyphicon glyphicon-plus-sign"></span><span class="glyphicon glyphicon-shopping-cart"></span></button>
 
 
@@ -95,7 +95,7 @@ else: echo '
 <input type="hidden" name="Nombre" value='.$registro['Nombre'].'>
 <input type="hidden" name="ID_Producto" value='.$registro['Id_Producto'].'>
 <input type="hidden" name="ID_Persona" value='.$_SESSION['ID_P'].'>
-<input type="number" style="width:80px;" class="cantidad" id="cantidad" name="cantidad" tabindex="4" max='.$registro['Stock'].' placeholder="Cant" required><br><br></input>
+<input type="number" style="width:80px;" class="cantidad" id="cantidad" name="cantidad" tabindex="4" min="0" max='.$registro['Stock'].' placeholder="Cant" required><br><br></input>
 <button type="submit" class="btn btn-info"><span class="glyphicon glyphicon-plus-sign"></span><span class="glyphicon glyphicon-shopping-cart"></span></button>
 
 
@@ -161,7 +161,7 @@ mysqli_query($enlace,"SET NAMES 'utf8'");
 <input type="hidden" name="Nombre" value='.$registro['Nombre'].'>
 <input type="hidden" name="ID_Producto" value='.$registro['Id_Producto'].'>
 <input type="hidden" name="ID_Persona" value='.$_SESSION['ID_P'].'>
-<input type="number" style="width:80px;" class="cantidad" id="cantidad" name="cantidad" tabindex="4" max='.$registro['Stock'].' placeholder="Cant" required><br><br></input>
+<input type="number" style="width:80px;" class="cantidad" id="cantidad" name="cantidad" tabindex="4" min="0" max='.$registro['Stock'].' placeholder="Cant" required><br><br></input>
 <button type="submit" class="btn btn-info"><span class="glyphicon glyphicon-plus-sign"></span><span class="glyphicon glyphicon-shopping-cart"></span></button>
 
 
