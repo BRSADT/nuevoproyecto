@@ -3,6 +3,8 @@ function MostrarProductosCarrito()
 {
 
 $totalsinDesc=0;
+$Descuento=0;
+$TotalR=0;
 	$count=0;
 $enlace = mysqli_connect("localhost", "root", "", "base_proyecto_dw");
 mysqli_query($enlace,"SET NAMES 'utf8'");
@@ -73,15 +75,43 @@ $ID_P=$_SESSION['ID_P'];
                                 <td>   </td>
                                 <td>   </td>
                                 <td>   </td>
+								';
+								$TotalR=$totalsinDesc;
+								echo $totalsinDesc;
+								if($totalsinDesc >=  200 and $totalsinDesc<500)
+								{
+								$Descuento=$totalsinDesc*.1;
+								$TotalR=$totalsinDesc-$Descuento;
+								}
+								
+								if($totalsinDesc >=  500 and $totalsinDesc<1000)
+								{
+								$Descuento=$totalsinDesc*.2;
+								$TotalR=$totalsinDesc-$Descuento;
+								}
+								
+								if($totalsinDesc >=  1000 and $totalsinDesc<5000)
+								{
+								$Descuento=$totalsinDesc*.3;
+								$TotalR=$totalsinDesc-$Descuento;
+								}
+								
+								if($totalsinDesc >=  5000)
+								{
+								$Descuento=$totalsinDesc*.5;
+								$TotalR=$totalsinDesc-$Descuento;
+								}
+								
+								echo'
                                 <td><h5>Descuento</h5></td>
-                                <td class="text-right"><h5><strong>$6.94</strong></h5></td>
+                                <td class="text-right"><h5><strong>'.$Descuento.'</strong></h5></td>
                             </tr>
                             <tr>
                                 <td>   </td>
                                 <td>   </td>
                                 <td>   </td>
                                 <td><h3>Total</h3></td>
-                                <td class="text-right"><h3><strong>$31.53</strong></h3></td>
+                                <td class="text-right"><h3><strong>'.$TotalR.'</strong></h3></td>
                             </tr>
                             <tr>
                               <td>   </td>
