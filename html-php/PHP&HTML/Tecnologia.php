@@ -203,6 +203,7 @@ include("../../html-php/funciones/MostrarProductos.php");
 
 
 
+		
 
         <section class="jumbotron jumbotron1-index">
             <div class="container">
@@ -225,6 +226,8 @@ include("../../html-php/funciones/MostrarProductos.php");
         </section>
 
 
+		
+		
 
 
 

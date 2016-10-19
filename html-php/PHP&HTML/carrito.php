@@ -1,6 +1,7 @@
 <?php
 header("Content-Type: text/html;charset=utf-8");
-include("../../html-php/funciones/GeneraEstado.php")
+include("../../html-php/funciones/GeneraEstado.php");
+include("../../html-php/funciones/MostrarProductosCarrito.php");
 ?>
 
 <br>
@@ -198,8 +199,22 @@ include("../../html-php/funciones/GeneraEstado.php")
 
         <br><br>
 
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
         <div class="container">
             <div class="row">
+			
+
+		<?php	MostrarProductosCarrito(); ?>
+		<!--	
                 <div class="col-sm-12 col-md-10 col-md-offset-1">
                     <table class="table table-hover">
                         <thead>
@@ -275,14 +290,30 @@ include("../../html-php/funciones/GeneraEstado.php")
                       </tbody>
                   </table>
               </div>
+			  -->
           </div>
       </div>
 
 
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
 
         <footer class="navbar-default navbar-absolute-bottom">
             <div class="container-fluid">
-                <span>TACOrporation - 7A1</span>
+        
+        <span>TACOrporation - 7A1</span>
                 <hr>
                 <span>Ponganos 100</span>
             </div>
