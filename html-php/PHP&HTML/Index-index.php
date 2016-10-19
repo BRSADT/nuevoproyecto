@@ -14,6 +14,7 @@ include("../../html-php/funciones/GeneraEstado.php");
         <Title>Inicio</title>
 
         <meta charset="UTF-8">
+            <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
         <link rel="stylesheet" href="../css/bootstrap.min.css">
         <link rel="stylesheet" href="../css/estilos.css">
@@ -73,7 +74,7 @@ include("../../html-php/funciones/GeneraEstado.php");
                                 </ul>
                             </li>
 
-                            <li><a href="#"><span class="glyphicon glyphicon-envelope"></span> Contacto</a></li>
+                            <li><a href="#" data-toggle="modal" data-target="#contacto"><span class="glyphicon glyphicon-envelope"></span> Contacto</a></li>
                             <li><a href="#"><span class="glyphicon glyphicon-sunglasses"></span> Acerca de nosotros</a></li>
 
 <?php if (!isset($_SESSION['name'])):
@@ -197,6 +198,42 @@ include("../../html-php/funciones/GeneraEstado.php");
             </div>
         </div>
 
+
+
+        <div class="modal fade" id="contacto" tabindex="-1" role="dialog" aria-hidden="true" style="display: none;">
+            <div class="modal-dialog">
+
+                    <div id="formulario" class="loginmodal-container">
+                                          <h1>Contacto</h1><br>
+                                          <form role="form" action="../funciones/contacto.php" method="POST" id="contacto" title="Nombre">
+                                          <label for="nombre">Nombre</label>
+                                          <input name="nombre" type="text" required="required" id="nombre" placeholder="nombre" tabindex="1" title="Nombre">
+                                          <br>
+                                          <label for="email">Email</label>
+                                          <input name="email" type="email" required="required" id="email" placeholder="email" tabindex="2" title="Email">
+                                          <br>
+                                          <label for="telefono">Teléfono</label>
+                                          <input name="telefono" type="text" id="telefono" placeholder="telefono" tabindex="3" title="Telefono">
+                                          <br>
+                                          <label for="ciudad">Ciudad</label>
+                                          <input name="ciudad" type="text" id="ciudad" placeholder="ciudad" tabindex="4" title="ciudad">
+                                          <br>
+                                          <label for="pais">País</label>
+                                          <input name="pais" type="pais" id="pais" placeholder="pais" tabindex="5" title="pais">
+                                          <br>
+                                          <label for="Mensaje">Mensaje</label>
+                                          <textarea name="mensaje" rows="4" id="mensaje" placeholder="mensaje" tabindex="6"></textarea>
+                                          <br>
+                                          <input type="submit" name="enviar" tabindex="7" value="Enviar"><input type="reset" tabindex="8" value="Borrar">
+                                          <input type="hidden" name="estado" value="1">
+                                          </form>
+                      </form>
+                    </div>
+                  </div>
+              </div>
+          </div>
+
+
         <div id="carousel-1" class="carousel slide" data-ride="carousel">
             <ol class="carousel-indicators">
                 <li data-target="#carousel-1" data-slide-to="0" class="active"></li>
@@ -271,6 +308,7 @@ include("../../html-php/funciones/GeneraEstado.php");
 <?php if (!isset($_SESSION['name'])):
     ?>
                                         <a href="#" class="btn btn-info" data-toggle="modal" data-target="#login-modal" role="button"><span class="glyphicon glyphicon-plus-sign"></span><span class="glyphicon glyphicon-shopping-cart"></span></a>
+
                                     <?php else: { ?>
                                             <a href="#" class="btn btn-info"  role="button"><span class="glyphicon glyphicon-plus-sign"></span><span class="glyphicon glyphicon-shopping-cart"></span></a>
 
