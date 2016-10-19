@@ -74,10 +74,8 @@ $datos=datosDeSesion($ObjBD);
  $_SESSION['name']=$datos[0]['name'];
                 $_SESSION['apellido']=$datos[0]['apellido'];
                    $_SESSION['email']=$datos[0]['email'];
-				echo  $_SESSION['name'];
-	echo  $_SESSION['apellido'];
-	echo  $_SESSION['email'];
-
+				   $_SESSION['ID_P']=$datos[0]['ID_P'];
+				    
 header('Location: ../PHP&HTML/Index-index.php');
 	}
 else

@@ -206,7 +206,7 @@ include("../../html-php/funciones/GeneraEstado.php");
 
             <div class="carousel-inner" role="listbox">
                 <div class="item active">
-                    <img src="../images/prueba1.jpg" class="img-responsive" alt="" width="100%"/>
+                    <img src="../images/prueba1.jpg" class="img-responsive" alt="" width="100%" />
                     <div class="carousel-caption">
                         <h3>Siempre lo mas fresco</h3>
                         <p>
@@ -216,7 +216,7 @@ include("../../html-php/funciones/GeneraEstado.php");
                     </div>
                 </div>
                 <div class="item">
-                    <img src="../images/prueba2.jpg" class="img-responsive" alt="" width="100%"/>
+                    <img src="../images/prueba2.jpg" class="img-responsive" alt="" width="100%" />
                     <div class="carousel-caption">
                         <h3>Descuentos todo el año</h3>
                         <p>
@@ -226,7 +226,7 @@ include("../../html-php/funciones/GeneraEstado.php");
                     </div>
                 </div>
                 <div class="item">
-                    <img src="../images/prueba3.jpg" class="img-responsive" alt="" width="100%"/>
+                    <img src="../images/prueba3.jpg" class="img-responsive" alt="" width="100%" />
                     <div class="carousel-caption">
                         <h3>Atencion especializada</h3>
                         <p>
@@ -265,7 +265,7 @@ include("../../html-php/funciones/GeneraEstado.php");
                                 <div class="caption">
                                     <h2>PRODUCTO</h2>
                                     <h2>PRECIO</h2>
-                                    <p>DESCRIPCION BIEN PINSHE SHIDORINA ALV</p>
+                                    <p style="font-size: 10px;">DESCRIPCION BIEN PINSHE SHIDORINA ALV</p>
 
 
 <?php if (!isset($_SESSION['name'])):
