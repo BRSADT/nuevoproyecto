@@ -5,8 +5,7 @@ if(isset($_POST['enviar'])){
 $nombre = $_POST['nombre'];
 $email = $_POST['email'];
 $telefono = $_POST['telefono'];
-$ciudad = $_POST['ciudad'];
-$pais = $_POST['pais'];
+
 $mensaje = $_POST['mensaje'];
 
 ///Validamos del lado del servidor que el nombre y el email no estén vacios
@@ -16,7 +15,7 @@ echo "Debe ingresar su nombre";
 else if($email == ''){
 echo "Debe ingresar su email";
 }else{
-$para = "correo@tudominio.com";//Email al que se enviará
+$para = "carlos97rc97@gmail.com";//Email al que se enviará
 $asunto = "Contacto para su sitio web";//Puedes cambiar el asunto del mensaje desde aqui
 //Este sería el cuerpo del mensaje
 $mensaje = "
@@ -32,14 +31,6 @@ $mensaje = "
 <tr>
 <td width='30%' align='left' bgcolor='#f0efef'><strong>Teléfono:</strong></td>
 <td width='70%' align='left'>$telefono</td>
-</tr>
-<tr>
-<td width='30%' align='left' bgcolor='#f0efef'><strong>Ciudad:</strong></td>
-<td width='70%' align='left'>$ciudad</td>
-</tr>
-<tr>
-<td width='30%' align='left' bgcolor='#f0efef'><strong>País:</strong></td>
-<td width='70%' align='left'>$pais</td>
 </tr>
 <tr>
 <td align='left' bgcolor='#f0efef'><strong>Comentario:</strong></td>

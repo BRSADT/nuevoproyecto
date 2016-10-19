@@ -27,7 +27,7 @@ mysqli_query($enlace,"SET NAMES 'utf8'");
 <a href="#" class="btn btn-info btn-xs" data-toggle="modal" data-target="#login-modal" role="button">
 <span class="glyphicon glyphicon-plus-sign"></span>
 <span class="glyphicon glyphicon-shopping-cart"></span></a>';
- else: echo ' 
+ else: echo '
 <form name="Seleccion" method="POST" action="../funciones/MandarAcarrito.php">
 <input type="hidden" name="Nombre" value='.$registro['Nombre'].'>
 <input type="hidden" name="ID_Producto" value='.$registro['Id_Producto'].'>
@@ -90,7 +90,7 @@ mysqli_query($enlace,"SET NAMES 'utf8'");
 <a href="#" class="btn btn-info btn-xs" data-toggle="modal" data-target="#login-modal" role="button">
 <span class="glyphicon glyphicon-plus-sign"></span>
 <span class="glyphicon glyphicon-shopping-cart"></span></a>';
-else: echo ' 
+else: echo '
 <form name="Seleccion" method="POST" action="../funciones/MandarAcarrito.php">
 <input type="hidden" name="Nombre" value='.$registro['Nombre'].'>
 <input type="hidden" name="ID_Producto" value='.$registro['Id_Producto'].'>
@@ -147,7 +147,7 @@ mysqli_query($enlace,"SET NAMES 'utf8'");
 
    <img src="../images/'.$registro['Imagen'].'" alt="" style="height: 300px;width: 500px;" > </img>
         <div class="caption">
-		
+
 		<h4>'.$registro['Nombre'].'</h4>
           <h3>$'.$registro['Precio'].'</h3>
          <p style="font-size: 10px;"> '.$registro['Descripcion'].'</p> ';
@@ -156,7 +156,7 @@ mysqli_query($enlace,"SET NAMES 'utf8'");
 <a href="#" class="btn btn-info btn-xs" data-toggle="modal" data-target="#login-modal" role="button">
 <span class="glyphicon glyphicon-plus-sign"></span>
 <span class="glyphicon glyphicon-shopping-cart"></span></a>';
- else: echo ' 
+ else: echo '
 <form name="Seleccion" method="POST" action="../funciones/MandarAcarrito.php">
 <input type="hidden" name="Nombre" value='.$registro['Nombre'].'>
 <input type="hidden" name="ID_Producto" value='.$registro['Id_Producto'].'>
@@ -166,7 +166,7 @@ mysqli_query($enlace,"SET NAMES 'utf8'");
 
 
 </form>';
- endif; 
+ endif;
 
 
 	echo '

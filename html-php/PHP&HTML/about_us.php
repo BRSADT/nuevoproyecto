@@ -78,7 +78,7 @@ include("../../html-php/funciones/GeneraEstado.php");
                             </li>
 
                             <li><a href="#" data-toggle="modal" data-target="#contacto"><span class="glyphicon glyphicon-envelope"></span> Contacto</a></li>
-                            <li><a href="about_us.php"><span class="glyphicon glyphicon-sunglasses"></span> Acerca de nosotros</a></li>
+                            <li><a href="#"><span class="glyphicon glyphicon-sunglasses"></span> Acerca de nosotros</a></li>
 
 <?php if (!isset($_SESSION['name'])):
     ?>
@@ -229,114 +229,50 @@ include("../../html-php/funciones/GeneraEstado.php");
               </div>
           </div>
 
+          <section class="jumbotron jumbotron1-index">
+              <p>
+                Somo una empresa enteramente dedicada a ti bla bla bla bla bla bla bla bla
+              </p>
+<br>
+              <p>
+                Oficinas:
+              </p>
+
+          </section>
 
 
-        <div id="carousel-1" class="carousel slide" data-ride="carousel">
-            <ol class="carousel-indicators">
-                <li data-target="#carousel-1" data-slide-to="0" class="active"></li>
-                <li data-target="#carousel-1" data-slide-to="1" ></li>
-                <li data-target="#carousel-1" data-slide-to="2" ></li>
-            </ol>
+          <div id="map"></div>
+          <script type="text/javascript">
 
-            <div class="carousel-inner" role="listbox">
-                <div class="item active">
-                    <img src="../images/prueba1.jpg" class="img-responsive" alt="" width="100%" />
-                    <div class="carousel-caption">
-                        <h3>Siempre lo mas fresco</h3>
-                        <p>
-                            En TACOrporation nos preocupamos por que tus alimentos lleguen frescos a tu cocina.
-                        </p>
+      var map;
+      function initMap() {
+        map = new google.maps.Map(document.getElementById('map'), {
+          center: {lat: -34.397, lng: 150.644},
+          zoom: 100
+        });
 
-                    </div>
-                </div>
-                <div class="item">
-                    <img src="../images/prueba2.jpg" class="img-responsive" alt="" width="100%" />
-                    <div class="carousel-caption">
-                        <h3>Descuentos todo el año</h3>
-                        <p>
-                            Consideramos importante siempre dar la mejor calidad al mejor precio para tu disfrute
-                        </p>
+        var marker= new google.maps.Marker({
+          position: {lat: -34.397, lng: 150.644},
+          map: map
+        });
+      }
 
-                    </div>
-                </div>
-                <div class="item">
-                    <img src="../images/prueba3.jpg" class="img-responsive" alt="" width="100%" />
-                    <div class="carousel-caption">
-                        <h3>Atencion especializada</h3>
-                        <p>
-                            Nuestra atencion a clientes se especializa en brindarte el mejor servicio.
-                        </p>
-
-                    </div>
-                </div>
-            </div>
-
-            <a href="#carousel-1" class="left carousel-control" role="button" data-slide="prev">
-                <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-                <span class="sr-only">Anterior</span>
-            </a>
-            <a href="#carousel-1" class="right carousel-control" role="button" data-slide="next">
-                <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-                <span class="sr-only">Siguiente</span>
-            </a>
-
-        </div>
+          </script>
+          <script async defer
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCNxaYp2MwoV3y_oFUH3HQBWe87vbE_R4A&callback=initMap">
+          </script>
 
 
-        <section class="jumbotron jumbotron1-index">
-            <div class="container">
-                <h1>Destacado</h1>
-                <div class="container" id="tourpackages-carousel">
-
-                    <div class="row">
-
-                        <div class="col-xs-18 col-sm-6 col-md-3">
-                            <div class="thumbnail">
-                                <img class="rotar" src="../images/plantilla.png" alt="">
-                                <div class="caption">
-                                    <h2>PRODUCTO</h2>
-                                    <h2>PRECIO</h2>
-                                    <p style="font-size: 10px;">DESCRIPCION BIEN SHIDORINA</p>
+          <footer class="navbar-default navbar-absolute-bottom">
+              <div class="container-fluid">
+                  <span>TACOrporation - 7A1</span>
+                  <hr>
+                  <span>Ponganos 100</span>
+              </div>
+          </footer>
 
 
-<?php if (!isset($_SESSION['name'])):
-    ?>
-                                        <a href="#" class="btn btn-info" data-toggle="modal" data-target="#login-modal" role="button"><span class="glyphicon glyphicon-plus-sign"></span><span class="glyphicon glyphicon-shopping-cart"></span></a>
-
-                                    <?php else: { ?>
-                                            <a href="#" class="btn btn-info"  role="button"><span class="glyphicon glyphicon-plus-sign"></span><span class="glyphicon glyphicon-shopping-cart"></span></a>
-
-                                            <input type="number" style='width:80px;' class="cantidad" id="cantidad" name="cantidad" tabindex="4" placeholder="Cant" required><br><br>
-
-        <?php
-    }
-    ?>
-                                    <?php endif; ?>
-
-
-
-                                </div>
-                            </div>
-                        </div>
-
-                    </div><!-- End row -->
-
-                </div><!-- End container -->
-            </div>
-        </section>
-
-
-
-        <footer class="navbar-default navbar-absolute-bottom">
-            <div class="container-fluid">
-                <span>TACOrporation - 7A1</span>
-                <hr>
-                <span>Ponganos 100</span>
-            </div>
-        </footer>
-
-
-    </body>
-    <script src="../js/jquery.js"></script>
-    <script src="../js/bootstrap.min.js"></script>
-</html>
+      </body>
+      <script src="../js/jquery.js"></script>
+      <script src="../js/bootstrap.min.js"></script>
+  </html>
