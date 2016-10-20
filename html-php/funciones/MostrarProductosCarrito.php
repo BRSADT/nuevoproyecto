@@ -77,7 +77,7 @@ $ID_P=$_SESSION['ID_P'];
                                 <td>   </td>
 								';
 								$TotalR=$totalsinDesc;
-								echo $totalsinDesc;
+								
 								if($totalsinDesc >=  200 and $totalsinDesc<500)
 								{
 								$Descuento=$totalsinDesc*.1;

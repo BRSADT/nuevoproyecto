@@ -23,7 +23,7 @@ $STATEMENT="INSERT INTO ticket (Compra,Total,Fecha_compra,Fecha_entrega) VALUES 
 mysqli_query($enlace,$STATEMENT);
 mysqli_query($enlace,"SET NAMES 'utf8'");
 
-	$consulta=mysqli_query($enlace,"SELECT ticket.Id_ticket from ticket where ticket.Compra='$Compra' && ticket.Total='$Total'&& ticket.Fecha_compra='$fecha'&& ticket.Fecha_entrega='$date_ent' ");
+	$consulta=mysqli_query($enlace,"SELECT max(ticket.Id_ticket) as Id_ticket from ticket  ");
 
 
 	while($registro=mysqli_fetch_array($consulta, MYSQLI_ASSOC))
