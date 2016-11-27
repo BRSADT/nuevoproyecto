@@ -10,21 +10,17 @@ window.location.replace("../PHP&HTML/Index-index.php")
 
 <?php
 include("conexion.php");
-function verificarUsuario($Usuario,$Pass)
+function verificarUsuario($Usuario,$Pass,&$Administrador)
 {
-
 $verificar=0;
- 
 	$link = mysqli_connect("localhost", "root", "", "base_proyecto_dw");
 
 /* verificar conexión */
 if (mysqli_connect_errno()) {
     printf("Connect failed: %s\n", mysqli_connect_error());
     exit();
-}
-
-	
-$consulta = "SELECT Usuario,Pass from persona ";	
+}	
+$consulta = "SELECT Usuario,Pass,Admin from persona ";	
 	
 	
 	if ($sentencia = mysqli_prepare($link, $consulta)) {
@@ -33,22 +29,30 @@ $consulta = "SELECT Usuario,Pass from persona ";
     mysqli_stmt_execute($sentencia);
 
   
-    mysqli_stmt_bind_result($sentencia, $user,$pass);
+    mysqli_stmt_bind_result($sentencia, $user,$pass,$Admin);
 
     /* obtener los valores */
     while (mysqli_stmt_fetch($sentencia)) {
 
 	if($Usuario==$user && $Pass==$pass)
-	$verificar=1;
-
+	{$verificar=1;
+	$Administrador.=$Admin;
+	}
     }
-	
-}
+	 }
+
 if($verificar==1)
   {
 
   return true;
   }
+  
+ 
+if($verificar==0)
+  {
+
+  return false;
+  } 
   
 }
 
@@ -62,15 +66,20 @@ $usuario=$_POST["usuario"];
 $pass=$_POST['pass'];
 
 
-
-if(verificarUsuario($usuario,$pass)==true)
+if(verificarUsuario($usuario,$pass,$Administrador)==true)
 
 {
 $ObjBD= new BaseDeDatos();
 
 session_start();
 $datos=datosDeSesion($ObjBD);
+$enlace = mysqli_connect("localhost", "root", "", "base_proyecto_dw");
+mysqli_query($enlace,"SET NAMES 'utf8'");
 
+
+
+ 
+ $_SESSION['Administrador']=$Administrador;
  $_SESSION['name']=$datos[0]['name'];
                 $_SESSION['apellido']=$datos[0]['apellido'];
                    $_SESSION['email']=$datos[0]['email'];
@@ -80,19 +89,24 @@ header('Location: ../PHP&HTML/Index-index.php');
 	}
 else
 {
-//header('Location: ../ingresar/Login.php');
+
 echo ('<script> 
 miFuncion()
-alert("no existe en la base de datos ,") ;
+alert("Datos Incorrectos") ;
 
 </script>');
 
 
+
+
 }
 
 
 
 }
+
+
+
 
 
 function datosDeSesion($BD){

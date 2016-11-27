@@ -2,6 +2,7 @@
 <?php
 header("Content-Type: text/html;charset=utf-8");
 include("../../html-php/funciones/GeneraEstado.php");
+include("../../html-php/funciones/MostrarProductos.php");
 ?>
 
 <br>
@@ -51,7 +52,7 @@ include("../../html-php/funciones/GeneraEstado.php");
                             <a href="#" class="navbar-brand" data-toggle="modal" data-target="#login-modal">Iniciar sesion</a>
                             <a href="#" class="navbar-brand" data-toggle="modal" data-target="#login-modal2">Registrarse</a>
 <?php else: { ?>
-                                <a href="#" class="navbar-brand" ><?php echo $_SESSION['name']; ?>  </a>
+                                <a href="#" class="navbar-brand" ><?php echo $_SESSION['name'];echo $_SESSION['Administrador']; ?>  </a>
                                 <a href="carrito.php" class="navbar-brand" ><span class="glyphicon glyphicon-shopping-cart"><span>Carrito</span></a>
         <?php
     }
@@ -286,42 +287,22 @@ include("../../html-php/funciones/GeneraEstado.php");
         <section class="jumbotron jumbotron1-index">
             <div class="container">
                 <h1>Destacado</h1>
-                <div class="container" id="tourpackages-carousel">
+				
+				  <div class="container" id="tourpackages-carousel">
 
                     <div class="row">
 
-                        <div class="col-xs-18 col-sm-6 col-md-3">
-                            <div class="thumbnail">
-                                <img class="rotar" src="../images/plantilla.png" alt="">
-                                <div class="caption">
-                                    <h2>PRODUCTO</h2>
-                                    <h2>PRECIO</h2>
-                                    <p style="font-size: 10px;">DESCRIPCION BIEN SHIDORINA</p>
+
+<?php MostrarProductosOferta(); ?>
 
 
-<?php if (!isset($_SESSION['name'])):
-    ?>
-                                        <a href="#" class="btn btn-info" data-toggle="modal" data-target="#login-modal" role="button"><span class="glyphicon glyphicon-plus-sign"></span><span class="glyphicon glyphicon-shopping-cart"></span></a>
+                    </div>
 
-                                    <?php else: { ?>
-                                            <a href="#" class="btn btn-info"  role="button"><span class="glyphicon glyphicon-plus-sign"></span><span class="glyphicon glyphicon-shopping-cart"></span></a>
-
-                                            <input type="number" style='width:80px;' class="cantidad" id="cantidad" name="cantidad" tabindex="4" placeholder="Cant" required><br><br>
-
-        <?php
-    }
-    ?>
-                                    <?php endif; ?>
-
-
-
-                                </div>
-                            </div>
-                        </div>
-
-                    </div><!-- End row -->
-
-                </div><!-- End container -->
+                </div>
+				
+				
+				
+				
             </div>
         </section>
 

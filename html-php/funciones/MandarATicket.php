@@ -1,7 +1,7 @@
 <script>
 function miFuncion()
 {
-
+window.history.back();
 }
 
 

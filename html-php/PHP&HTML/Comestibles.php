@@ -224,6 +224,74 @@ include("../../html-php/funciones/MostrarProductos.php");
 
                 </div>
             </div>
+		<?php
+		 if(($_SESSION['Administrador'])==1) echo ' 			
+<h3>Agregar</h3> 
+		
+		
+					  <div class="container" id="tourpackages-carousel">
+
+                    <div class="row">
+
+                        <div class="col-xs-18 col-sm-6 col-md-3">
+                            <div class="thumbnail">
+                                <img class="rotar" src="../images/plantilla.png" id="output" alt="">
+                                <div class="caption">
+								
+<form action="../funciones/GuardarProductos.php" method="post" enctype="multipart/form-data">
+<form name="registrar" method="POST"  action="ExistenciaUsuario.php"></br>
+   	    
+		  
+			
+	
+	
+					
+								
+
+
+								
+                                    <h5> <input type="text" name="Nombre" id="Nombre" placeholder="Nombre"   minlength="1" maxlength="100" required> <br></h5>
+                                     <h5> <input type="number" name="precio" id="precio" placeholder="Precio" min="1"  required><br></h5>
+                                  <h5> <input type="text" name="Descripcion" id="Descripcion" placeholder="Descripcion" minlength="1" maxlength="255" required><br></h5>
+
+				    <select   name="Id_Departamento" id="Id_Departamento"  style="margin-bottom:20px;" required ><br>
+                            <option value="1">Tecnologia</option><br>
+                            <option value="2">Comestibles</option><br>
+                           
+                        </select>
+						<br>
+
+				
+				
+			<h5> 	<input type="number" name="Descuento" id="Descuento" placeholder="Descuento%" min="0" required><br></h5>
+				<h5> 	<input type="number" name="Stock" id="Stock" placeholder="Stock" min="1" required><br></h5>
+                               
+		
+
+                            </div>
+                        </div>
+
+                    </div><!-- End row -->
+
+                </div><!-- End container -->
+   Selecciona una imagen:
+      <input type="file" accept="image/*" onchange="loadFile(event)" name="fileToUpload" id="fileToUpload" required>
+<img id="output"/>
+<script>
+  var loadFile = function(event) {
+    var output = document.getElementById("output");
+    output.src = URL.createObjectURL(event.target.files[0]);
+  };
+</script>         
+               <br>
+	<input type="submit" value="Enviar " name="submit">
+		    </div>
+				
+</form>					
+		';?>
+		
+
+			
         </section>
 
 
