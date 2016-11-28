@@ -52,7 +52,7 @@ include("../../html-php/funciones/MostrarProductos.php");
                             <a href="#" class="navbar-brand" data-toggle="modal" data-target="#login-modal">Iniciar sesion</a>
                             <a href="#" class="navbar-brand" data-toggle="modal" data-target="#login-modal2">Registrarse</a>
 <?php else: { ?>
-                                <a href="#" class="navbar-brand" ><?php echo $_SESSION['name'];echo $_SESSION['Administrador']; ?>  </a>
+                                <a href="#" class="navbar-brand" ><?php echo $_SESSION['name']; ?>  </a>
                                 <a href="carrito.php" class="navbar-brand" ><span class="glyphicon glyphicon-shopping-cart"><span>Carrito</span></a>
         <?php
     }
