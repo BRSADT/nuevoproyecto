@@ -12,7 +12,7 @@ mysqli_query($enlace,"SET NAMES 'utf8'");
 $ID_P=$_SESSION['ID_P'];
 
 
-	$consulta=mysqli_query($enlace,"SELECT producto.Imagen,producto.Nombre,producto.Descripcion,producto.Precio,carrito.Cantidad FROM `producto` inner join carrito on carrito.Id_Producto=producto.Id_Producto where carrito.ID_Usuario='$ID_P'");
+	$consulta=mysqli_query($enlace,"SELECT producto.Stock,producto.Id_Producto,producto.Imagen,producto.Nombre,producto.Descripcion,producto.Precio,carrito.Cantidad FROM `producto` inner join carrito on carrito.Id_Producto=producto.Id_Producto where carrito.ID_Usuario='$ID_P'");
 
 
 
@@ -51,13 +51,36 @@ $ID_P=$_SESSION['ID_P'];
 								echo'
                                 <td class="col-md-1 text-center"><strong>'.$totalP.'</strong></td>
                                 <td class="col-md-1">
-                                  <button type="button" class="btn btn-primary">
+								
+								.
+								
+								
+								
+								
+                               <form name="Seleccion3" method="POST" action="../funciones/MandarEditarCarrito.php">
+  
+<input type="hidden" name="ID_Producto2" value='.$registro['Id_Producto'].'>
+<input type="number" style="width:80px;" class="cantidad" id="cantidad" name="cantidad" tabindex="4"  min="1" max='.$registro['Stock'].'  placeholder="'.$registro['Cantidad'].'" required></input>
+<input type="hidden" name="ID_Persona" value='.$_SESSION['ID_P'].'>
+  <button type="submit"  class="btn btn-primary">
                                       <span class="glyphicon glyphicon-refresh"></span>
-                                  </button>
-                                <button type="button" class="btn btn-danger">
+                                </button>
+                                
+		</form>						
+								
+						                              <form name="Seleccion3" method="POST" action="../funciones/MandarEliminarCarrito.php">
+  
+<input type="hidden" name="ID_Producto2" value='.$registro['Id_Producto'].'>
+<input type="hidden" name="ID_Persona" value='.$_SESSION['ID_P'].'>
+  <button type="submit"   class="btn btn-danger">
                                     <span class="glyphicon glyphicon-remove"></span>
-                                </button></td>
-
+                                     
+                                </button>
+																
+			</form>
+					
+								
+								
                             </tr>
 							
 	';}
