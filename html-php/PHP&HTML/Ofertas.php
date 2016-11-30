@@ -224,12 +224,13 @@ include("../../html-php/funciones/MostrarProductos.php");
                 </div>
             </div>
 		<?php
-		 if(($_SESSION['Administrador'])==1) echo ' 			
-<h3>Agregar</h3> 
-		
+			if(isset($_SESSION['name'])) {
+		 if((($_SESSION['Administrador'])==1))  { echo ' 				
+
 		
 					  <div class="container" id="tourpackages-carousel">
-
+<h3>Agregar</h3> 
+		
                     <div class="row">
 
                         <div class="col-xs-18 col-sm-6 col-md-3">
@@ -287,7 +288,7 @@ include("../../html-php/funciones/MostrarProductos.php");
 		    </div>
 				
 </form>					
-		';?>
+		';}}?>
         </section>
 
 

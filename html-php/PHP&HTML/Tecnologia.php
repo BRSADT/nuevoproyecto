@@ -230,7 +230,8 @@ include("../../html-php/funciones/GuardarProductos.php");
 		
 					  <div class="container" id="tourpackages-carousel">
 <?php
-		 if(($_SESSION['Administrador'])==1) echo ' 			
+		if(isset($_SESSION['name'])) {
+		 if((($_SESSION['Administrador'])==1))  { echo ' 			
 <h3>Agregar</h3> 
                     <div class="row">
 
@@ -289,7 +290,7 @@ include("../../html-php/funciones/GuardarProductos.php");
 		    </div>
 				
 </form>					
-		';?>
+		';}}?>
 		
 		
 		
